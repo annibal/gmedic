@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="gmedic" ng-controller="mainController">
+  <head>
+    <meta charset="utf-8">
+    <base href="/" target="_self">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GMedic{{title.pageTitle != null && title.pageTitle != ''
+      ? (' | '+title.pageTitle)
+      : ''}}</title>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/main/main.css">
+  </head>
+  <body >
+    <header ng-controller="headerController">
+      <nav id="nav" ng-include="'/public/main/headerView.html'"></nav>
+    </header>
+
+    <main ng-view></main>
+
+    <!-- Lib -->
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/node_modules/angular/angular.min.js"></script>
+    <script src="/node_modules/angular-route/angular-route.min.js"></script>
+    <script src="/node_modules/angular-i18n/angular-locale_pt-br.js"></script>
+
+    <!-- App main -->
+    <script src="/public/main/main.js"></script>
+    <script src="/public/main/routes.js"></script>
+
+    <!-- utility services -->
+    <script src="/public/main/headerService.js"></script>
+    <script src="/public/main/titleService.js"></script>
+    <script src="/public/main/nbSession.js"></script>
+    <script src="/public/main/nbToast.js"></script>
+    <script src="/public/main/nbCommunication.js"></script>
+
+    <!-- object services -->
+    <script src="/public/pacientes/pacientesService.js"></script>
+    <script src="/public/atendentes/atendentesService.js"></script>
+    <script src="/public/agendamentos/agendamentosService.js"></script>
+    <script src="/public/notification/notificationService.js"></script>
+    <script src="/public/user/userService.js"></script>
+
+    <!-- extra controllers -->
+    <script src="/public/main/notFoundController.js"></script>
+    <script src="/public/main/headerController.js"></script>
+    <script src="/public/main/mainController.js"></script>
+
+    <!-- object controllers  -->
+    <script src="/public/login/loginController.js"></script>
+    <script src="/public/login/logoutController.js"></script>
+    <script src="/public/pacientes/pacientesController.js"></script>
+    <script src="/public/atendentes/atendentesController.js"></script>
+    <script src="/public/agendamentos/agendamentosController.js"></script>
+    <script src="/public/dashboard/dashboardController.js"></script>
+    <script src="/public/notification/notificationController.js"></script>
+    <script src="/public/user/userController.js"></script>
+
+  </body>
+</html>
