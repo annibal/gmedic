@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/public/main/main.css">
   </head>
-  <body >
+  <body ng-class="header.visible ? 'header-visible' : 'header-hidden'">
     <header ng-controller="headerController">
       <nav id="nav" ng-include="'/public/main/headerView.html'"></nav>
     </header>

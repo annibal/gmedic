@@ -7,6 +7,11 @@ app.controller("headerController",[
   ) {
 
     $scope.header = header
-    
+    $scope.header.categories[0].visible = true;
+
+    $scope.$watch('header',function() {
+      console.log($scope.header.visible)
+    })
+
   }
 ])
