@@ -1,34 +1,34 @@
 var routes = [
   {
-    url:'/',
-    config:{
-      controller:'loginController',
-      templateUrl:'/public/login/login.html'
-    }
-  },
-  {
-    url:'/login',
+    url:'',
     config:{
       controller:'loginController',
       templateUrl:'public/login/login.html'
     }
   },
   {
-    url:'/forgot-password',
+    url:'login',
     config:{
       controller:'loginController',
       templateUrl:'public/login/login.html'
     }
   },
   {
-    url:'/sign-up',
+    url:'forgot-password',
     config:{
       controller:'loginController',
       templateUrl:'public/login/login.html'
     }
   },
   {
-    url:'/logout',
+    url:'sign-up',
+    config:{
+      controller:'loginController',
+      templateUrl:'public/login/login.html'
+    }
+  },
+  {
+    url:'logout',
     config:{
       controller:'logoutController',
       templateUrl:'public/login/logout.html'
@@ -37,74 +37,74 @@ var routes = [
 
 
   {
-    url:'/dashboard',
+    url:'dashboard',
     config:{
       controller:'dashboardController',
-      templateUrl:'/public/dashboard/dashboard.html'
+      templateUrl:'public/dashboard/dashboard.html'
     }
   },
 
 
   {
-    url:'/atendentes/',
+    url:'atendentes/',
     config:{
       controller:'atendentesController',
-      templateUrl:'/public/atendentes/atendentesList.html'
+      templateUrl:'public/atendentes/atendentesList.html'
     }
   },
   {
-    url:'/atendente/:atendenteId',
+    url:'atendente/:atendenteId',
     config:{
       controller:'atendentesController',
-      templateUrl:'/public/atendentes/atendentesEdit.html'
+      templateUrl:'public/atendentes/atendentesEdit.html'
     }
   },
 
 
   {
-    url:'/pacientes/',
+    url:'pacientes/',
     config:{
       controller:'pacientesController',
-      templateUrl:'/public/pacientes/pacientesList.html'
+      templateUrl:'public/pacientes/pacientesList.html'
     }
   },
   {
-    url:'/paciente/:pacienteId',
+    url:'paciente/:pacienteId',
     config:{
       controller:'pacientesController',
-      templateUrl:'/public/pacientes/pacientesEdit.html'
+      templateUrl:'public/pacientes/pacientesEdit.html'
     }
   },
 
 
   {
-    url:'/agendamentos/',
+    url:'agendamentos/',
     config:{
       controller:'agendamentosController',
-      templateUrl:'/public/agendamentos/agendamentosList.html'
+      templateUrl:'public/agendamentos/agendamentosList.html'
     }
   },
   {
-    url:'/agendamento/:agendamentoId',
+    url:'agendamento/:agendamentoId',
     config:{
       controller:'agendamentosController',
-      templateUrl:'/public/agendamentos/agendamentosEdit.html'
+      templateUrl:'public/agendamentos/agendamentosEdit.html'
     }
   },
 
 
   {
-    url:'/notification/:notificationId',
+    url:'notification/:notificationId',
     config:{
       controller:'notificationController',
-      templateUrl:'/public/notification/notification.html'
+      templateUrl:'public/notification/notification.html'
     }
   },
   {
-    url:'/user/',
+    url:'user/',
     config:{
       controller:'userController',
-      templateUrl:'/public/user/userEdit.html'
+      templateUrl:'public/user/userEdit.html'
     }
   },
 ]
