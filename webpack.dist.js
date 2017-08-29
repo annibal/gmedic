@@ -3,6 +3,9 @@ const common = require('./webpack.common.js')
 
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 module.exports = merge(common,{
 
@@ -13,6 +16,13 @@ module.exports = merge(common,{
       'process.env': {
         'NODE_ENV': JSON.stringify('production')
       }
+    }),
+
+    new FaviconsWebpackPlugin('./src/core/main/calendar_icon.png')
+
+    new HtmlWebpackPlugin({
+      template:'./src/index.pug',
+      filename: path.resolve(__dirname, 'index.html')
     })
   ],
 

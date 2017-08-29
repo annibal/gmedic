@@ -3,6 +3,9 @@ const common = require('./webpack.common.js');
 
 const path = require('path');
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
+const ExtraEntryWebpackPlugin = require('extra-entry-webpack-plugin')
 
 
 module.exports = merge(common,{
@@ -14,7 +17,20 @@ module.exports = merge(common,{
       'process.env': {
         'NODE_ENV': JSON.stringify('development')
       }
-    })
+    }),
+
+    new HtmlWebpackPlugin({
+      template:'./src/index.pug',
+      filename: path.resolve(__dirname, 'index.html'),
+      alwaysWriteToDisk: true
+    }),
+
+    new ExtraEntryWebpackPlugin({
+      entry:'./src/index.pug',
+      outputName: path.resolve(__dirname, 'index.html'),
+    }),
+
+    new HtmlWebpackHarddiskPlugin()
   ],
 
   module:{

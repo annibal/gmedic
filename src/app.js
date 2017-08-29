@@ -1,26 +1,20 @@
 
 
 import './style.scss';
-console.log("He")
-
-if (module.hot) {module.hot.accept();}
 
 if (process.env.NODE_ENV == 'production') {
+
   console.log('PRODUCTION MODE aka Dist');
+
 } else {
+
   console.log('DEVELOPMENT MODE aka Dev');
+
+  if (module.hot) {
+    module.hot.accept('./index.pug',function() {
+      location.reload();
+    });
+  }
+  import('./index.pug');
+
 }
-
-async function getComponent() {
-  var element = document.createElement("div");
-  const _ = await import(/* webpackChunkName: "lodash" */ 'lodash');
-
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  element.classList.add("hello")
-
-  return element;
-};
-
-getComponent().then(component => {
-  document.body.appendChild(component)
-})

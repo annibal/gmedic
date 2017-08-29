@@ -2,7 +2,9 @@
 /public/
 *.stats.json
 *.example
+/index.html
 
+.DS_Store
 
 # Logs
 logs
