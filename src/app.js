@@ -1,6 +1,7 @@
 
 
 import './style.scss';
+console.log("He")
 
 if (module.hot) {module.hot.accept();}
 

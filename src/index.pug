@@ -1,0 +1,27 @@
+doctype html
+html(
+  lang="pt-br",
+  ng-app="gmedic",
+  ng-controller="mainController"
+)
+  head
+    meta(charset="utf-8")
+    meta(
+      name="viewport",
+      content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0, maximum-scale=2.0"
+    )
+    base(href="/gmedic/", target="self")
+    title
+      | GMedic with PUG MODAFOCAAAAAA
+      | {{title.pageTitle != null && title.pageTitle != ''
+      |   ? (' | '+title.pageTitle)
+      |   : ''}}
+  body(
+    ng-class="header.visible ? 'header-visible' : 'header-hidden'"
+  )
+    header(ng-controller="headerController")
+      nav#nav(ng-include="'public/main/headerView.html'")
+    
+    main(ng-view)
+      
+    //- script(src="public/app.bundle.js")

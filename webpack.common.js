@@ -1,5 +1,6 @@
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
 
@@ -14,10 +15,31 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(['public']),
+    new HtmlWebpackPlugin({
+      template:'./src/index.pug',
+      filename: '../index.html'
+    })
   ],
 
   module: {
     loaders: [
+      // HTML
+      {
+        test: /\.pug/,
+        loaders: [
+          {
+            loader:'html-loader'
+          },
+          {
+            loader:'pug-html-loader',
+            options: {
+
+              data: {}
+            }
+          }
+        ]
+      },
+
       // CSS
       {
         test: /\.css$/,
@@ -33,6 +55,7 @@ module.exports = {
         ]
       },
 
+      // SASS (SCSS)
       {
         test: /\.scss$/,
         exclude: /(node_modules|bower_components)/,
@@ -59,23 +82,6 @@ module.exports = {
             options: {
               presets: ['env'],
               filenameRelative: '/gmedic'
-            }
-          }
-        ]
-      },
-
-      // Images
-      {
-        test: /\.(png|svg|jpg|gif)$/,
-        loaders: [
-          {
-            loader:'file-loader',
-            options: {
-              hash: 'sha512',
-              digest: 'hex',
-              name: '[name]-[hash].[ext]',
-              outputPath: 'img/', // path inside dist folder to store the file
-              publicPath:'public/' // path to add to url when replacing html
             }
           }
         ]

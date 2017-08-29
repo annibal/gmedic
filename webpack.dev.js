@@ -17,6 +17,27 @@ module.exports = merge(common,{
     })
   ],
 
+  module:{
+    loaders: [
+      // Images
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        loaders: [
+          {
+            loader:'file-loader',
+            options: {
+              hash: 'sha512',
+              digest: 'hex',
+              name: '[name]-[hash].[ext]',
+              outputPath: 'img/', // path inside dist folder to store the file
+              publicPath:'public/' // path to add to url when replacing html
+            }
+          }
+        ]
+      },
+    ]
+  },
+
   devtool: 'inline-source-map',
   devServer: {
     contentBase: path.resolve(__dirname, '../'),

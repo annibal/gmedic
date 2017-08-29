@@ -20,6 +20,7 @@ module.exports = merge(common,{
 
   module: {
     loaders: [
+      // Images
       {
         test: /\.(png|svg|jpg|gif)$/,
         loaders: [
@@ -43,12 +44,12 @@ module.exports = merge(common,{
                 optimizationLevel: 7,
               },
               pngquant: {
-                quality: '65-90',
-                speed: 4
+                floyd: 0.5,
+                speed: 2
               },
               mozjpeg: {
                 progressive: true,
-                quality: 65
+                arithmetic: false
               }
             }
           }
