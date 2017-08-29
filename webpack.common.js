@@ -1,36 +1,20 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const webpack = require('webpack');
+
 
 module.exports = {
   entry: {
     app: './src/app.js',
-    print: './src/print.js',
   },
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'public/'),
-    publicPath: '/public/'
+    publicPath: '/gmedic/public/'
   },
   plugins: [
     new CleanWebpackPlugin(['public']),
   ],
-
-  devtool: 'inline-source-map',
-  devServer: {
-    contentBase: path.resolve(__dirname, '../'),
-    publicPath: '/gmedic/public/',
-    compress:true,
-    port: 8081,
-    host: '0.0.0.0',
-    openPage : '/gmedic',
-    open: true,
-    overlay: {
-      warnings: true,
-      errors: true
-    }
-
-  },
 
   module: {
     loaders: [
@@ -49,6 +33,37 @@ module.exports = {
         ]
       },
 
+      {
+        test: /\.scss$/,
+        exclude: /(node_modules|bower_components)/,
+        loaders: [
+          {
+            loader: "style-loader" // creates style nodes from JS strings
+          },
+          {
+            loader: "css-loader" // translates CSS into CommonJS
+          },
+          {
+            loader: "sass-loader" // compiles Sass to CSS
+          }
+        ]
+      },
+
+      // JS
+      {
+        test: /\.js$/,
+        exclude: /(node_modules|bower_components)/,
+        loaders: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['env'],
+              filenameRelative: '/gmedic'
+            }
+          }
+        ]
+      },
+
       // Images
       {
         test: /\.(png|svg|jpg|gif)$/,
@@ -61,25 +76,6 @@ module.exports = {
               name: '[name]-[hash].[ext]',
               outputPath: 'img/', // path inside dist folder to store the file
               publicPath:'public/' // path to add to url when replacing html
-            }
-          },
-          {
-            loader:'image-webpack-loader',
-            options: {
-              gifsicle: {
-                interlaced: false,
-              },
-              optipng: {
-                optimizationLevel: 7,
-              },
-              pngquant: {
-                quality: '65-90',
-                speed: 4
-              },
-              mozjpeg: {
-                progressive: true,
-                quality: 65
-              }
             }
           }
         ]

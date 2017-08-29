@@ -1,20 +1,25 @@
-import _ from 'lodash';
-import './style.css'
-import printMe from './print.js'
 
-function component() {
-    var element = document.createElement('div');
-    var btn = document.createElement('button');
 
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-    element.classList.add('hello');
+import './style.scss';
 
-    btn.innerText = "Click me and check the console";
-    btn.addEventListener("click",printMe);
+if (module.hot) {module.hot.accept();}
 
-    element.appendChild(btn)
+if (process.env.NODE_ENV == 'production') {
+  console.log('PRODUCTION MODE aka Dist');
+} else {
+  console.log('DEVELOPMENT MODE aka Dev');
+}
 
-    return element;
-  }
+async function getComponent() {
+  var element = document.createElement("div");
+  const _ = await import(/* webpackChunkName: "lodash" */ 'lodash');
 
-  document.body.appendChild(component());
+  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+  element.classList.add("hello")
+
+  return element;
+};
+
+getComponent().then(component => {
+  document.body.appendChild(component)
+})

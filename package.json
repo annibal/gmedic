@@ -3,24 +3,20 @@
   "version": "0.0.1",
   "description": "calendar for medical consultation agendation",
   "main": "index.html",
-
   "scripts": {
     "help": "echo \"\\n\\n >: serve:pure - for local server only\\n >: serve:webpack - for local server with webpack watch (uses development configuration)\\n >: watch - starts webpack for automatic files build (uses dev)\\n >: build:dev - for development build\\n >: build:dist - for distribution release\\n >: info:[http-server|webpack|webpack-dev-server] - calls possibly non global module with -h attribute \\n\\n\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-
     "serve:pure": "http-server ../ -o -p 8081 -a 0.0.0.0 -g -c-1",
-    "serve:webpack": "webpack-dev-server --config webpack.config.dev.js --context ./",
-
-    "watch": "webpack  --config webpack.config.dev.js --watch",
-
-    "build:dev": "webpack --config webpack.config.dev.js --progress",
-    "build:dist": "webpack --config webpack.config.dist.js --progress",
-
+    "serve:webpack": "webpack-dev-server --config webpack.dev.js --context ./",
+    "watch": "webpack  --config webpack.dev.js --watch",
+    "build:dev": "webpack --config webpack.dev.js --progress",
+    "build:dist": "webpack --config webpack.dist.js --progress",
     "info:http-server": "http-server -h",
     "info:webpack": "webpack -h",
-    "info:webpack-dev-server": "webpack-dev-server -h"
+    "info:webpack-dev-server": "webpack-dev-server -h",
+    "build:dev:stats": "webpack --config webpack.dev.js --profile --json > dev.stats.json && echo \"\\n\\nUpload this DEV stats file here https://alexkuz.github.io/webpack-chart/\\n\\n\"",
+    "build:dist:stats": "webpack --config webpack.dist.js --profile --json > dist.stats.json && echo \"\\n\\nUpload this DIST stats file here https://alexkuz.github.io/webpack-chart/\\n\\n\""
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/annibal/gmedic.git"
@@ -33,18 +29,29 @@
   "homepage": "https://github.com/annibal/gmedic#readme",
   "dependencies": {
     "angular": "^1.6.6",
-    "bootstrap": "^3.3.7",
     "angular-i18n": "^1.6.6",
     "angular-route": "^1.6.6",
+    "babel-runtime": "^6.26.0",
+    "bootstrap": "^3.3.7",
     "jquery": "^3.2.1"
   },
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-dynamic-import-webpack": "^1.0.1",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.0",
     "clean-webpack-plugin": "^0.1.16",
     "css-loader": "^0.28.5",
     "file-loader": "^0.11.2",
     "html-webpack-plugin": "^2.30.1",
     "image-webpack-loader": "^3.4.0",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
-    "webpack-dev-server": "^2.7.1"
+    "uglifyjs-webpack-plugin": "^0.4.6",
+    "webpack-dev-server": "^2.7.1",
+    "webpack-merge": "^4.1.0"
   }
 }

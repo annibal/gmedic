@@ -1,5 +1,7 @@
 
 /public/
+*.stats.json
+*.example
 
 
 # Logs
