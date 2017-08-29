@@ -1,0 +1,20 @@
+@import url('./core/fonts/raleway/raleway.css');
+@import url('./core/fonts/indieFlower/indieFlower.css');
+
+.hello {
+  color:white;
+  font-family: Indie Flower;
+}
+
+.other {
+  font-family: Raleway;
+}
+
+body {
+  font-family: Raleway, sans-serif;
+  background:url('./core/main/sunsetbg.jpg') 50% 50%;
+  background-size:cover;
+  background-repeat: no-repeat;
+  min-width: 100vw;
+  min-height: 100vh;
+}
