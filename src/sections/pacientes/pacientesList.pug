@@ -1,0 +1,6 @@
+div(ng-controller="pacientesController")
+  h2 Pacientes List
+  ul
+    each id in [1,2,3,4,5,6,7]
+      li
+        a(href="#!/paciente/#{id}")= id + ':' + id + ' - ' + id

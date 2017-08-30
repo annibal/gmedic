@@ -9,6 +9,15 @@ const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 const gmedic = require("./gmedic.config.js");
+const routes = require("./src/core/routes.js")
+
+var views = routes.map(route => {
+  return new HtmlWebpackPlugin({
+    template:'./src/sections/'+route.config.viewPath + ".pug",
+    filename: path.resolve(__dirname, './public/views/' + route.config.viewPath + ".html"),
+    alwaysWriteToDisk: true
+  })
+})
 
 module.exports = merge(common,{
 
@@ -27,7 +36,7 @@ module.exports = merge(common,{
       template:'./src/index.pug',
       filename: path.resolve(__dirname, 'index.html')
     })
-  ],
+  ].concat(views),
 
   devtool: 'cheap-module-source-map',
 

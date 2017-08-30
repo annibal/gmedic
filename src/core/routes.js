@@ -3,35 +3,35 @@ module.exports = [
     url:'',
     config:{
       controller:'loginController',
-      viewPath:'login/login.html'
+      viewPath:'login/login'
     }
   },
   {
     url:'login',
     config:{
       controller:'loginController',
-      viewPath:'login/login.html'
+      viewPath:'login/login'
     }
   },
   {
     url:'forgot-password',
     config:{
       controller:'loginController',
-      viewPath:'login/login.html'
+      viewPath:'login/login'
     }
   },
   {
     url:'sign-up',
     config:{
       controller:'loginController',
-      viewPath:'login/login.html'
+      viewPath:'login/login'
     }
   },
   {
     url:'logout',
     config:{
       controller:'logoutController',
-      viewPath:'login/logout.html'
+      viewPath:'login/logout'
     }
   },
 
@@ -40,7 +40,7 @@ module.exports = [
     url:'dashboard',
     config:{
       controller:'dashboardController',
-      viewPath:'dashboard/dashboard.html'
+      viewPath:'dashboard/dashboard'
     }
   },
 
@@ -49,14 +49,14 @@ module.exports = [
     url:'atendentes/',
     config:{
       controller:'atendentesController',
-      viewPath:'atendentes/atendentesList.html'
+      viewPath:'atendentes/atendentesList'
     }
   },
   {
     url:'atendente/:atendenteId',
     config:{
       controller:'atendentesController',
-      viewPath:'atendentes/atendentesEdit.html'
+      viewPath:'atendentes/atendentesEdit'
     }
   },
 
@@ -65,14 +65,14 @@ module.exports = [
     url:'pacientes/',
     config:{
       controller:'pacientesController',
-      viewPath:'pacientes/pacientesList.html'
+      viewPath:'pacientes/pacientesList'
     }
   },
   {
     url:'paciente/:pacienteId',
     config:{
       controller:'pacientesController',
-      viewPath:'pacientes/pacientesEdit.html'
+      viewPath:'pacientes/pacientesEdit'
     }
   },
 
@@ -81,14 +81,14 @@ module.exports = [
     url:'agendamentos/',
     config:{
       controller:'agendamentosController',
-      viewPath:'agendamentos/agendamentosList.html'
+      viewPath:'agendamentos/agendamentosList'
     }
   },
   {
     url:'agendamento/:agendamentoId',
     config:{
       controller:'agendamentosController',
-      viewPath:'agendamentos/agendamentosEdit.html'
+      viewPath:'agendamentos/agendamentosEdit'
     }
   },
 
@@ -97,14 +97,14 @@ module.exports = [
     url:'notification/:notificationId',
     config:{
       controller:'notificationController',
-      viewPath:'notification/notification.html'
+      viewPath:'notification/notification'
     }
   },
   {
     url:'user/',
     config:{
       controller:'userController',
-      viewPath:'user/userEdit.html'
+      viewPath:'user/userEdit'
     }
   },
 ]

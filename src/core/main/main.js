@@ -14,7 +14,7 @@ app.config(function($routeProvider) {
       base+route.url,
       {
         controller: route.config.controller,
-        templateUrl: viewPath + route.config.viewPath
+        templateUrl: viewPath + route.config.viewPath + ".html"
       });
   })
 

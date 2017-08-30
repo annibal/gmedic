@@ -1,0 +1,6 @@
+div(ng-controller="atendentesController")
+  h2 Atendentes List
+  ul
+    each id in [100,200,400,500,200,123,234,345,456,567]
+      li
+        a(href="#!/atendente/#{id}")= id + ':' + id + ' - ' + id

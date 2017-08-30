@@ -1,0 +1,6 @@
+div(ng-controller="agendamentosController")
+  h2 Agendamentos List
+  ul
+    each id in [7,26,38]
+      li
+        a(href="#!/agendamento/#{id}")= id + ':' + id + ' - ' + id
