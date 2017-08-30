@@ -1,3 +1,10 @@
+
+import app from 'core/main/main.js'
+import headerService from 'components/header/headerService.js'
+import titleService from 'components/title/titleService.js'
+import userService from 'sections/user/userService.js'
+import nbToast from 'core/nb/nbToast.js'
+
 app.controller('userController',[
   'headerService',
   'titleService',

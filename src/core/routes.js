@@ -1,37 +1,37 @@
-var routes = [
+module.exports = [
   {
     url:'',
     config:{
       controller:'loginController',
-      templateUrl:'public/login/login.html'
+      viewPath:'login/login.html'
     }
   },
   {
     url:'login',
     config:{
       controller:'loginController',
-      templateUrl:'public/login/login.html'
+      viewPath:'login/login.html'
     }
   },
   {
     url:'forgot-password',
     config:{
       controller:'loginController',
-      templateUrl:'public/login/login.html'
+      viewPath:'login/login.html'
     }
   },
   {
     url:'sign-up',
     config:{
       controller:'loginController',
-      templateUrl:'public/login/login.html'
+      viewPath:'login/login.html'
     }
   },
   {
     url:'logout',
     config:{
       controller:'logoutController',
-      templateUrl:'public/login/logout.html'
+      viewPath:'login/logout.html'
     }
   },
 
@@ -40,7 +40,7 @@ var routes = [
     url:'dashboard',
     config:{
       controller:'dashboardController',
-      templateUrl:'public/dashboard/dashboard.html'
+      viewPath:'dashboard/dashboard.html'
     }
   },
 
@@ -49,14 +49,14 @@ var routes = [
     url:'atendentes/',
     config:{
       controller:'atendentesController',
-      templateUrl:'public/atendentes/atendentesList.html'
+      viewPath:'atendentes/atendentesList.html'
     }
   },
   {
     url:'atendente/:atendenteId',
     config:{
       controller:'atendentesController',
-      templateUrl:'public/atendentes/atendentesEdit.html'
+      viewPath:'atendentes/atendentesEdit.html'
     }
   },
 
@@ -65,14 +65,14 @@ var routes = [
     url:'pacientes/',
     config:{
       controller:'pacientesController',
-      templateUrl:'public/pacientes/pacientesList.html'
+      viewPath:'pacientes/pacientesList.html'
     }
   },
   {
     url:'paciente/:pacienteId',
     config:{
       controller:'pacientesController',
-      templateUrl:'public/pacientes/pacientesEdit.html'
+      viewPath:'pacientes/pacientesEdit.html'
     }
   },
 
@@ -81,14 +81,14 @@ var routes = [
     url:'agendamentos/',
     config:{
       controller:'agendamentosController',
-      templateUrl:'public/agendamentos/agendamentosList.html'
+      viewPath:'agendamentos/agendamentosList.html'
     }
   },
   {
     url:'agendamento/:agendamentoId',
     config:{
       controller:'agendamentosController',
-      templateUrl:'public/agendamentos/agendamentosEdit.html'
+      viewPath:'agendamentos/agendamentosEdit.html'
     }
   },
 
@@ -97,14 +97,14 @@ var routes = [
     url:'notification/:notificationId',
     config:{
       controller:'notificationController',
-      templateUrl:'public/notification/notification.html'
+      viewPath:'notification/notification.html'
     }
   },
   {
     url:'user/',
     config:{
       controller:'userController',
-      templateUrl:'public/user/userEdit.html'
+      viewPath:'user/userEdit.html'
     }
   },
 ]

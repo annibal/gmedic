@@ -11,18 +11,16 @@ html(
       content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0, maximum-scale=2.0"
     )
     base(href="/gmedic/", target="self")
-    title
-      | GMedic with PUG MODAFOCAAAAAA
-      | {{title.pageTitle != null && title.pageTitle != ''
-      |   ? (' | '+title.pageTitle)
-      |   : ''}}
+    title.
+      GMedic with PUG MODAFOCAAAAAA
+      {{title.pageTitle != null && title.pageTitle != ''
+       ? (' | '+title.pageTitle)
+       : ''}}
   body(
     ng-class="header.visible ? 'header-visible' : 'header-hidden'"
   )
     header(ng-controller="headerController")
-      nav#nav(ng-include="'public/main/headerView.html'")
+      nav#nav
+        include ./components/header/headerView.pug
     
     main(ng-view)
-      h1 Olha kitop
-      h2 TOPZERA
-      h2.indie Mais top ainda

@@ -1,3 +1,8 @@
+
+import app from 'core/main/main.js'
+import titleService from 'components/title/titleService.js'
+import headerService from 'components/header/headerService.js'
+
 app.controller("notFoundController",[
   'headerService',
   'titleService',

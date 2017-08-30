@@ -1,0 +1,23 @@
+
+ul(ng-class="header.visible ? 'header-visible' : 'header-hidden'")
+  
+  li(
+    ng-repeat="category in header.categories",
+    ng-class="category.visible ? 'category-visible' : 'category-hidden'"
+  )
+
+    p(
+      ng-bind="category.text",
+      ng-click="header.setCategoryVisible(category)"
+    )
+
+    ul
+      li(
+        ng-repeat="item in category.items",
+        ng-class="item.htmlClass"
+      )
+      
+        a(
+          ng-bind="item.text",
+          ng-href="#!{{item.url}}"
+        )

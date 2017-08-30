@@ -1,3 +1,12 @@
+
+import app from 'core/main/main.js'
+import headerService from 'components/header/headerService.js'
+import titleService from 'components/title/titleService.js'
+import pacientesService from 'sections/pacientes/pacientesService.js'
+import atendentesService from 'sections/atendentes/atendentesService.js'
+import agendamentosService from 'sections/agendamentos/agendamentosService.js'
+import nbToast from 'core/nb/nbToast.js'
+
 app.controller('pacientesController',[
   'headerService',
   'titleService',

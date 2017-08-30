@@ -1,3 +1,6 @@
+
+import app from 'core/main/main.js'
+
 app.service("headerService",[
   function(
   ) {

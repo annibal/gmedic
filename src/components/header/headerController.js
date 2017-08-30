@@ -1,3 +1,7 @@
+
+import app from 'core/main/main.js'
+import headerService from 'components/header/headerService.js'
+
 app.controller("headerController",[
   'headerService',
   '$scope',
