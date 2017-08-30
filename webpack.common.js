@@ -2,6 +2,9 @@ const path = require('path');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+const gmedic = require("./gmedic.config.js");
 
 module.exports = {
   entry: {
@@ -10,18 +13,19 @@ module.exports = {
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'public/'),
-    publicPath: '/gmedic/public/'
+    publicPath: gmedic.APP_URL + '/public/'
   },
   plugins: [
-    new CleanWebpackPlugin(['public'])
+    new CleanWebpackPlugin(['public']),
+    new ExtractTextPlugin("style.css")
   ],
 
   module: {
-    loaders: [
+    rules: [
       // HTML
       {
         test: /\.pug/,
-        loaders: [
+        use: [
           {
             loader:'html-loader'
           },
@@ -35,48 +39,39 @@ module.exports = {
         ]
       },
 
-      // CSS
-      {
-        test: /\.css$/,
-        loaders: [
-          {
-            loader:'style-loader',
-            options: {}
-          },
-          {
-            loader:'css-loader',
-            options: {}
-          }
-        ]
-      },
-
       // SASS (SCSS)
       {
-        test: /\.scss$/,
+        test: /\.(scss|sass|css)$/,
         exclude: /(node_modules|bower_components)/,
-        loaders: [
-          {
-            loader: "style-loader" // creates style nodes from JS strings
-          },
-          {
-            loader: "css-loader" // translates CSS into CommonJS
-          },
-          {
-            loader: "sass-loader" // compiles Sass to CSS
-          }
-        ]
+        use:
+          ExtractTextPlugin.extract({
+            fallback: 'style-loader',
+            use:
+            [
+              {
+                loader: "css-loader", // translates CSS into CommonJS
+                options: {}
+              },
+              {
+                loader: "sass-loader", // compiles Sass to CSS
+                options: {
+                  includePaths: [path.resolve(__dirname, 'node_modules')],
+                }
+              }
+            ]
+          })
       },
 
       // JS
       {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
-        loaders: [
+        use: [
           {
             loader: 'babel-loader',
             options: {
               presets: ['env'],
-              filenameRelative: '/gmedic'
+              filenameRelative: gmedic.APP_URL
             }
           }
         ]
@@ -85,7 +80,7 @@ module.exports = {
       // Fonts
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
-        loaders: [
+        use: [
           {
             loader:'file-loader',
             options: {
@@ -95,6 +90,7 @@ module.exports = {
           }
         ]
       }
+
     ]
   },
 };

@@ -7,6 +7,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 const ExtraEntryWebpackPlugin = require('extra-entry-webpack-plugin')
 
+const gmedic = require("./gmedic.config.js");
 
 module.exports = merge(common,{
 
@@ -34,11 +35,11 @@ module.exports = merge(common,{
   ],
 
   module:{
-    loaders: [
+    rules: [
       // Images
       {
         test: /\.(png|svg|jpg|gif)$/,
-        loaders: [
+        use: [
           {
             loader:'file-loader',
             options: {
@@ -46,7 +47,7 @@ module.exports = merge(common,{
               digest: 'hex',
               name: '[name]-[hash].[ext]',
               outputPath: 'img/', // path inside dist folder to store the file
-              publicPath:'public/' // path to add to url when replacing html
+              publicPath: gmedic.APP_URL + '/public/' // path to add to url when replacing html
             }
           }
         ]
@@ -57,12 +58,12 @@ module.exports = merge(common,{
   devtool: 'inline-source-map',
   devServer: {
     contentBase: path.resolve(__dirname, '../'),
-    publicPath: '/gmedic/public/',
+    publicPath:  gmedic.APP_URL + '/public/',
     compress:true,
     hot:true,
     port: 8081,
     host: '0.0.0.0',
-    openPage : '/gmedic',
+    openPage :  gmedic.APP_URL + '',
     open: true,
     overlay: {
       warnings: true,

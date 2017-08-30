@@ -4,7 +4,7 @@ import './style.scss';
 
 if (process.env.NODE_ENV == 'production') {
 
-  console.log('PRODUCTION MODE aka Dist');
+  // console.log('PRODUCTION MODE aka Dist');
 
 } else {
 
@@ -15,6 +15,8 @@ if (process.env.NODE_ENV == 'production') {
       location.reload();
     });
   }
+
+  // gambs for HMR in Index
   import('./index.pug');
 
 }

@@ -1,11 +1,14 @@
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js')
+const path = require('path');
 
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+
+const gmedic = require("./gmedic.config.js");
 
 module.exports = merge(common,{
 
@@ -18,7 +21,7 @@ module.exports = merge(common,{
       }
     }),
 
-    new FaviconsWebpackPlugin('./src/core/main/calendar_icon.png')
+    new FaviconsWebpackPlugin('./src/core/main/calendar_icon.png'),
 
     new HtmlWebpackPlugin({
       template:'./src/index.pug',
@@ -29,11 +32,11 @@ module.exports = merge(common,{
   devtool: 'cheap-module-source-map',
 
   module: {
-    loaders: [
+    rules: [
       // Images
       {
         test: /\.(png|svg|jpg|gif)$/,
-        loaders: [
+        use: [
           {
             loader:'file-loader',
             options: {
@@ -41,7 +44,7 @@ module.exports = merge(common,{
               digest: 'hex',
               name: '[name]-[hash].[ext]',
               outputPath: 'img/', // path inside dist folder to store the file
-              publicPath:'public/' // path to add to url when replacing html
+              publicPath:'/gemdic/public/' // path to add to url when replacing html
             }
           },
           {
