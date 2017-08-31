@@ -3,10 +3,32 @@ const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const gmedic = require("./gmedic.config.js");
+const routes = require("./src/core/routes.js")
+
+var views = routes.map(route => {
+  return new HtmlWebpackPlugin({
+    template:'./src/sections/'+route.config.viewPath + ".pug",
+    filename: path.resolve(__dirname, './public/views/' + route.config.viewPath + ".html"),
+    alwaysWriteToDisk: true,
+    inject:false
+  })
+})
+
+views.push(
+  new HtmlWebpackPlugin({
+    template:'./src/components/notFound/404.pug',
+    filename: path.resolve(__dirname, './public/views/main/404.html'),
+    alwaysWriteToDisk: true,
+    inject:false
+  })
+)
 
 module.exports = {
+  views:views,
+  webpackCommonConfig: {
   entry: {
     app: './src/app.js',
   },
@@ -100,4 +122,4 @@ module.exports = {
 
     ]
   },
-};
+}};

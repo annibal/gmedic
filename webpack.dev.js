@@ -8,18 +8,8 @@ const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 const ExtraEntryWebpackPlugin = require('extra-entry-webpack-plugin')
 
 const gmedic = require("./gmedic.config.js");
-const routes = require("./src/core/routes.js")
 
-var views = routes.map(route => {
-  return new HtmlWebpackPlugin({
-    template:'./src/sections/'+route.config.viewPath + ".pug",
-    filename: path.resolve(__dirname, './public/views/' + route.config.viewPath + ".html"),
-    alwaysWriteToDisk: true,
-    inject: false
-  })
-})
-
-module.exports = merge(common,{
+module.exports = merge(common.webpackCommonConfig,{
 
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
@@ -42,7 +32,7 @@ module.exports = merge(common,{
     }),
 
     new HtmlWebpackHarddiskPlugin()
-  ].concat(views),
+  ].concat(common.views),
 
   module:{
     rules: [

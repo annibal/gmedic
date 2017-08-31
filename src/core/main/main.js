@@ -19,7 +19,7 @@ app.config(function($routeProvider) {
   })
 
   $routeProvider.otherwise({
-    templateUrl:base+"public/main/404.html",
+    templateUrl:viewPath+"main/404.html",
     controller:"notFoundController"
   })
 })

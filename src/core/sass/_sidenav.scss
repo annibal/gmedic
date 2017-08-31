@@ -1,0 +1,85 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+main {
+  margin-left: 2px;
+  padding:5px;
+  position: relative;
+  overflow: auto;
+  min-width: 340px;
+  min-height: 100vh;
+
+  background:url('core/main/sunsetbg.jpg') 50% 50%;
+  background-size:cover;
+  background-repeat: no-repeat;
+  color:white;
+}
+
+nav {
+  position: relative;
+  height: 100%;
+  background:rgba(255,255,255,0.9);
+
+  &>ul {
+    height: 100%;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    width:2px;
+    overflow: hidden;
+
+    &>li {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      overflow: hidden;
+      transition: all .5s ease;
+
+      &.category-visible {
+        flex: 12;
+      }
+
+      &>p {
+        padding: 15px;
+        margin: 0;
+        flex: 1;
+        cursor: pointer;
+      }
+
+      &>ul {
+        list-style: none;
+        padding-left: 15px;
+        flex: 30;
+        overflow-y: auto;
+        overflow-x: hidden;
+      }
+
+      ul {
+
+        &>li {
+
+          &>a {
+            padding: 10px;
+            display: block;
+          }
+        }
+      }
+
+    }
+  }
+}
+
+.header-visible {
+  main {
+    margin-left: 340px;
+  }
+  nav>ul {
+    width:340px;
+  }
+}

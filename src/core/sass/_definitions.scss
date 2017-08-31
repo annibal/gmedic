@@ -1,0 +1,47 @@
+
+$primary-color:#10CA7E;
+$secondary-color:#CA601E;
+
+
+$size:342;
+// TODO: sidemenu over main in small screens
+// TODO: toggle menu
+// TODO: js for changing content device-width on < 2*size screens, to fit whole content
+
+
+/*
+
+ 0 -- 100 -- 200 -- 300 -- 400 -- 500 -- 600 -- 700 -- 800 -- 900 -- 1000-- 1100-- 1200-- 1300-- 1400-- 1500-- 1600--
+ |                      |                      |                      |                      |                      |
+ |                      |                      |                      |                      |                      |
+ |                      |                      |                      |                      |                      |
+ |                      |                      |                      |                      |                      |
+ |                      |                      |                      |                      |                      |
+     phone, vertical        phone, horizontal           tablet                 monitor                laptop               widescreen
+
+<340
+  blocks expand
+  main goes 100%
+  all sidebars hidden
+  zooms out to fit 340px in screen width
+
+<682
+  blocks go 50%
+  main goes 100%
+  all sidebars hidden
+  zooms out to fit 682px in screen width
+
+<1024
+  blocks go 50%
+  main goes 684px;
+  all sidebars hidden, but expand to 340px, overflowing screen, when open, also push
+  zooms to 1
+
+<1366
+  same as above, but right sidebar visible
+
+<1520
+  same as above, but menu visible always (is there no more sidebars?)
+
+
+*/

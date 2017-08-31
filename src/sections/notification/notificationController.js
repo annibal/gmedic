@@ -31,6 +31,6 @@ app.controller('notificationController',[
     title.pageTitle = "";
 
     $scope.idNotification = $routeParams.notificationId;
-
+    
   }
 ])
