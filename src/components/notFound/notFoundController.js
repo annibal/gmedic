@@ -1,15 +1,15 @@
 
 import app from 'core/main/main.js'
 import titleService from 'components/title/titleService.js'
-import headerService from 'components/header/headerService.js'
+import menuService from 'components/menu/menuService.js'
 
 app.controller("notFoundController",[
-  'headerService',
+  'menuService',
   'titleService',
   function(
-    header, title
+    menu, title
   ) {
-    header.visible = false;
+    menu.visible = false;
     title.pageTitle = '404 Not Found';
   }
 ])

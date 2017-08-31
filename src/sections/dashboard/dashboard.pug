@@ -1,2 +1,7 @@
 div(ng-controller="dashboardController")
   h2 Dashboard
+  button.btn.btn-block.btn-default(
+    ng-click="menu.toggleMenu()"
+  ) 
+    | {{menu.visible ? 'Fechar' : 'Abrir'}} menu
+  

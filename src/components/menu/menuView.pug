@@ -1,0 +1,30 @@
+
+ul
+  
+  li.category-hidden.menu-control(
+    ng-if="screenSize.isLt('notebook')",
+    ng-click="menu.toggleMenu()"
+  )
+    p.text-right X
+      
+  
+  li(
+    ng-repeat="category in menu.categories",
+    ng-class="category.visible ? 'category-visible' : 'category-hidden'"
+  )
+
+    p(
+      ng-bind="category.text",
+      ng-click="menu.setCategoryVisible(category)"
+    )
+
+    ul
+      li(
+        ng-repeat="item in category.items",
+        ng-class="item.htmlClass"
+      )
+      
+        a(
+          ng-bind="item.text",
+          ng-href="#!{{item.url}}"
+        )

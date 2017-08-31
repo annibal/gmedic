@@ -1,25 +1,25 @@
 
 import app from 'core/main/main.js'
-import headerService from 'components/header/headerService.js'
+import menuService from 'components/menu/menuService.js'
 import titleService from 'components/title/titleService.js'
 import userService from 'sections/user/userService.js'
 import nbToast from 'core/nb/nbToast.js'
 
 app.controller('userController',[
-  'headerService',
+  'menuService',
   'titleService',
   'userService',
   'nbToast',
   '$scope',
   function(
-    header,
+    menu,
     title,
     user,
     toast,
     $scope
   ) {
 
-    header.visible = true;
+    menu.visible = true;
     title.pageTitle = "Pacientes"
 
   }

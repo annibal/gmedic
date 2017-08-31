@@ -1,19 +1,19 @@
 
 import app from 'core/main/main.js'
-import headerService from 'components/header/headerService.js'
+import menuService from 'components/menu/menuService.js'
 import titleService from 'components/title/titleService.js'
 
 app.controller("loginController",[
-  'headerService',
+  'menuService',
   'titleService',
   '$scope',
   function(
-    header,
+    menu,
     title,
     $scope
   ) {
 
-    header.visible = false;
+    menu.visible = false;
     title.pageTitle = ''
 
   }

@@ -2,11 +2,10 @@
 $primary-color:#10CA7E;
 $secondary-color:#CA601E;
 
+$goldenStartSize: -2;
+$goldenSize: 342;
 
-$size:342;
-// TODO: sidemenu over main in small screens
-// TODO: toggle menu
-// TODO: js for changing content device-width on < 2*size screens, to fit whole content
+$menu-items: 4;
 
 
 /*
@@ -16,8 +15,10 @@ $size:342;
  |                      |                      |                      |                      |                      |
  |                      |                      |                      |                      |                      |
  |                      |                      |                      |                      |                      |
- |                      |                      |                      |                      |                      |
+ |                   340|                   682|                  1024|                  1366|                  1708|
      phone, vertical        phone, horizontal           tablet                 monitor                laptop               widescreen
+
+teste
 
 <340
   blocks expand
@@ -40,8 +41,10 @@ $size:342;
 <1366
   same as above, but right sidebar visible
 
-<1520
+<1708
   same as above, but menu visible always (is there no more sidebars?)
 
+
+EDIT: created more mobile breakpoints
 
 */

@@ -12,15 +12,17 @@ html(
     )
     base(href="/gmedic/", target="self")
     title.
-      GMedic with PUG MODAFOCAAAAAA
+      GMedic
       {{title.pageTitle != null && title.pageTitle != ''
        ? (' | '+title.pageTitle)
        : ''}}
   body(
-    ng-class="header.visible ? 'header-visible' : 'header-hidden'"
+    ng-class="menu.visible ? 'menu-visible' : 'menu-hidden'"
   )
     header(ng-controller="headerController")
+      include ./components/header/headerView.pug
+    menu(ng-controller="menuController")
       nav#nav
-        include ./components/header/headerView.pug
+        include ./components/menu/menuView.pug
     
     main(ng-view)

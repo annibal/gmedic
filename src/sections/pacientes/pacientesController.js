@@ -1,6 +1,6 @@
 
 import app from 'core/main/main.js'
-import headerService from 'components/header/headerService.js'
+import menuService from 'components/menu/menuService.js'
 import titleService from 'components/title/titleService.js'
 import pacientesService from 'sections/pacientes/pacientesService.js'
 import atendentesService from 'sections/atendentes/atendentesService.js'
@@ -8,7 +8,7 @@ import agendamentosService from 'sections/agendamentos/agendamentosService.js'
 import nbToast from 'core/nb/nbToast.js'
 
 app.controller('pacientesController',[
-  'headerService',
+  'menuService',
   'titleService',
   'pacientesService',
   'atendentesService',
@@ -17,7 +17,7 @@ app.controller('pacientesController',[
   '$scope',
   '$routeParams',
   function(
-    header,
+    menu,
     title,
     pacientes,
     atendentes,
@@ -27,7 +27,7 @@ app.controller('pacientesController',[
     $routeParams
   ) {
 
-    header.visible = true;
+    menu.visible = true;
     title.pageTitle = "Pacientes"
 
     if ($routeParams.pacienteId != null) {

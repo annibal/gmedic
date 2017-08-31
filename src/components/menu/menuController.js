@@ -1,25 +1,22 @@
 
 import app from 'core/main/main.js'
-import titleService from 'components/title/titleService.js'
 import menuService from 'components/menu/menuService.js'
 import screenSizeService from 'components/screenSize/screenSizeService.js'
 
-app.controller("mainController",[
-  'titleService',
+app.controller("menuController",[
   'menuService',
   'screenSizeService',
   '$scope',
   function(
-    titleService,
-    menuService,
+    menu,
     screenSize,
     $scope
   ) {
 
-    $scope.title = titleService;
-    $scope.menu = menuService;
+    $scope.menu = menu
+    $scope.menu.categories[0].visible = true;
+
     $scope.screenSize = screenSize;
-    window.mainScope = $scope;
 
   }
 ])

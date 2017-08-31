@@ -39,7 +39,10 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(['public']),
-    new ExtractTextPlugin("style.css")
+    new ExtractTextPlugin("style.css"),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'common' // Specify the common bundle's name.
+    })
   ],
 
   resolve: {

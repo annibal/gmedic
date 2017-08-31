@@ -1,4 +1,95 @@
-<!DOCTYPE html><html lang="pt-br" ng-app="gmedic" ng-controller="mainController"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0, maximum-scale=2.0"><base href="/gmedic/" target="self"><title>GMedic with PUG MODAFOCAAAAAA
-{{title.pageTitle != null && title.pageTitle != ''
- ? (' | '+title.pageTitle)
- : ''}}</title><link href="/gmedic/public/style.css" rel="stylesheet"></head><body ng-class="header.visible ? 'header-visible' : 'header-hidden'"><header ng-controller="headerController"><nav id="nav"><ul ng-class="header.visible ? 'header-visible' : 'header-hidden'"><li ng-repeat="category in header.categories" ng-class="category.visible ? 'category-visible' : 'category-hidden'"><p ng-bind="category.text" ng-click="header.setCategoryVisible(category)"></p><ul><li ng-repeat="item in category.items" ng-class="item.htmlClass"><a ng-bind="item.text" ng-href="#!{{item.url}}"></a></li></ul></li></ul></nav></header><main ng-view></main><script type="text/javascript" src="/gmedic/public/app.bundle.js"></script><script type="text/javascript" src="/gmedic/public//Users/vn0iwwz/Documents/GitHub/gmedic/index.html"></script></body></html>
+<head><link href="/gmedic/public/style.css" rel="stylesheet"></head>Html Webpack Plugin:
+<pre>
+  Error: Child compilation failed:
+  Module build failed: Error: ENOENT: no such file or directory, open '/Users  /vn0iwwz/Documents/GitHub/gmedic/src/components/header/headerView.pug'
+  
+  
+  - Error
+  
+  - index.js:69 Function.read
+    [gmedic]/[pug-load]/index.js:69:13
+  
+  - index.js:147 Object.load.string.read
+    [gmedic]/[pug-html-loader]/[pug]/lib/index.js:147:25
+  
+  - index.js:24 
+    [gmedic]/[pug-load]/index.js:24:25
+  
+  - index.js:23 walkAST
+    [gmedic]/[pug-load]/[pug-walk]/index.js:23:18
+  
+  - index.js:104 
+    [gmedic]/[pug-load]/[pug-walk]/index.js:104:20
+  
+  - Array.reduce
+  
+  - index.js:103 walkAndMergeNodes
+    [gmedic]/[pug-load]/[pug-walk]/index.js:103:18
+  
+  - index.js:37 walkAST
+    [gmedic]/[pug-load]/[pug-walk]/index.js:37:19
+  
+  - index.js:48 walkAST
+    [gmedic]/[pug-load]/[pug-walk]/index.js:48:21
+  
+  - index.js:104 
+    [gmedic]/[pug-load]/[pug-walk]/index.js:104:20
+  
+  - Array.reduce
+  
+  - index.js:103 walkAndMergeNodes
+    [gmedic]/[pug-load]/[pug-walk]/index.js:103:18
+  
+  
+  - Error: ENOENT: no such file or directory, open '/Users/vn0iwwz/Documents/    GitHub/gmedic/src/components/header/headerView.pug'
+  
+  
+  - compiler.js:76 
+    [gmedic]/[html-webpack-plugin]/lib/compiler.js:76:16
+  
+  - Compiler.js:304 
+    [gmedic]/[webpack]/lib/Compiler.js:304:11
+  
+  - Compiler.js:520 
+    [gmedic]/[webpack]/lib/Compiler.js:520:14
+  
+  - Tapable.js:202 next
+    [gmedic]/[tapable]/lib/Tapable.js:202:11
+  
+  - CachePlugin.js:62 Compiler.<anonymous>
+    [gmedic]/[webpack]/lib/CachePlugin.js:62:5
+  
+  - Tapable.js:206 Compiler.applyPluginsAsyncSeries
+    [gmedic]/[tapable]/lib/Tapable.js:206:13
+  
+  - Compiler.js:517 
+    [gmedic]/[webpack]/lib/Compiler.js:517:11
+  
+  - Tapable.js:195 Compilation.applyPluginsAsyncSeries
+    [gmedic]/[tapable]/lib/Tapable.js:195:46
+  
+  - Compilation.js:671 
+    [gmedic]/[webpack]/lib/Compilation.js:671:19
+  
+  - Tapable.js:195 Compilation.applyPluginsAsyncSeries
+    [gmedic]/[tapable]/lib/Tapable.js:195:46
+  
+  - Compilation.js:662 
+    [gmedic]/[webpack]/lib/Compilation.js:662:11
+  
+  - Tapable.js:195 Compilation.applyPluginsAsyncSeries
+    [gmedic]/[tapable]/lib/Tapable.js:195:46
+  
+  - Compilation.js:657 
+    [gmedic]/[webpack]/lib/Compilation.js:657:10
+  
+  - Tapable.js:195 Compilation.applyPluginsAsyncSeries
+    [gmedic]/[tapable]/lib/Tapable.js:195:46
+  
+  - Compilation.js:653 sealPart2
+    [gmedic]/[webpack]/lib/Compilation.js:653:9
+  
+  - Tapable.js:195 Compilation.applyPluginsAsyncSeries
+    [gmedic]/[tapable]/lib/Tapable.js:195:46
+  
+</pre><script type="text/javascript" src="/gmedic/public/common.bundle.js"></script><script type="text/javascript" src="/gmedic/public/app.bundle.js"></script><script type="text/javascript" src="/gmedic/public//Users/vn0iwwz/Documents/GitHub/gmedic/index.html"></script>

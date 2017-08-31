@@ -1,9 +1,12 @@
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    overflow: hidden;
+menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  overflow: hidden;
+  z-index: 300;
+  margin:0;
+  padding:0;
 }
 
 main {
@@ -21,32 +24,56 @@ main {
 }
 
 nav {
-  position: relative;
+  position: fixed;
   height: 100%;
   background:rgba(255,255,255,0.9);
 
   &>ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+
     height: 100%;
     padding: 0;
     list-style: none;
-    display: flex;
-    flex-direction: column;
     width:2px;
     overflow: hidden;
 
     &>li {
       display: flex;
       flex-direction: column;
-      flex: 1;
+      flex: 0 0 auto;
+      height: 50px;
+      width:100%;
       overflow: hidden;
       transition: all .5s ease;
+
+      @for $i from 1 through $menu-items {
+        &:nth-child(4n+#{$i}) {
+          & > p {
+            background:transparentize(
+              mix($secondary-color, $primary-color, ($i/$menu-items)*100%),
+              0.6
+            )
+          }
+          &.category-visible > p {
+            background:transparentize(
+              mix($secondary-color, $primary-color, ($i/$menu-items)*100%),
+              0
+            )
+          }
+        }
+      }
 
       &.category-visible {
         flex: 12;
       }
 
       &>p {
-        padding: 15px;
+        padding: 0 15px;
+        height: 50px;
+        line-height: 50px;
         margin: 0;
         flex: 1;
         cursor: pointer;
@@ -75,11 +102,23 @@ nav {
   }
 }
 
-.header-visible {
-  main {
-    margin-left: 340px;
-  }
+.menu-visible {
+  // main {
+  //   margin-left: 340px;
+  // }
   nav>ul {
     width:340px;
+  }
+}
+
+@media(max-width: $goldenSize*2px + $goldenStartSize) {
+
+  .menu-visible {
+    // main {
+    //   margin-left: 340px;
+    // }
+    nav, nav>ul {
+      width:100%;
+    }
   }
 }
