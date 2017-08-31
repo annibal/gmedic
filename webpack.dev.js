@@ -14,7 +14,8 @@ var views = routes.map(route => {
   return new HtmlWebpackPlugin({
     template:'./src/sections/'+route.config.viewPath + ".pug",
     filename: path.resolve(__dirname, './public/views/' + route.config.viewPath + ".html"),
-    alwaysWriteToDisk: true
+    alwaysWriteToDisk: true,
+    inject: false
   })
 })
 

@@ -1,8 +1,8 @@
 
-/public/
+public/
 *.stats.json
 *.example
-/index.html
+index.html
 
 .DS_Store
 
