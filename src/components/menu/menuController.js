@@ -18,5 +18,9 @@ app.controller("menuController",[
 
     $scope.screenSize = screenSize;
 
+    if (screenSize.isLt('NOTEBOOK')) {
+      $scope.menu.opened = false;
+    }
+
   }
 ])

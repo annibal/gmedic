@@ -3,5 +3,5 @@ div(ng-controller="dashboardController")
   button.btn.btn-block.btn-default(
     ng-click="menu.toggleMenu()"
   ) 
-    | {{menu.visible ? 'Fechar' : 'Abrir'}} menu
+    | {{menu.opened ? 'Fechar' : 'Abrir'}} menu
   

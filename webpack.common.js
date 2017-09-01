@@ -117,7 +117,7 @@ module.exports = {
             loader:'file-loader',
             options: {
               outputPath: 'fonts/', // path inside dist folder to store the file
-              publicPath:'public/' // path to add to url when replacing html
+              publicPath:'' // path to add to url when replacing html
             }
           }
         ]

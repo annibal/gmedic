@@ -1,0 +1,38 @@
+div.item.middle-container(
+  class="",
+  ng-click="menu.toggleMenu()",
+  ng-if="header.items.openMenu.enabled",
+  ng-class="'flex-order-'+header.items.openMenu.order"
+  id="header-item-open-menu"
+)
+  div.middle.center.glyphicon(
+    ng-class="menu.opened ? 'glyphicon-remove' : 'glyphicon-th-list' "
+  )
+  
+div.item.middle-container(
+  ng-if="header.items.info.enabled",
+  ng-class="'flex-order-'+header.items.info.order"
+  id="header-item-info"
+)
+  div.middle.center.glyphicon.glyphicon-info-sign
+    
+div.item.middle-container(
+  ng-if="header.items.fullscreen.enabled",
+  ng-class="'flex-order-'+header.items.fullscreen.order"
+  id="header-item-fullscreen"
+)
+  div.middle.center.glyphicon.glyphicon-fullscreen
+    
+div.item.middle-container(
+  ng-if="header.items.chat.enabled",
+  ng-class="'flex-order-'+header.items.chat.order"
+  id="header-item-chat"
+)
+  div.middle.center.glyphicon.glyphicon-bullhorn
+    
+div.item.middle-container(
+  ng-if="header.items.search.enabled",
+  ng-class="'flex-order-'+header.items.search.order"
+  id="header-item-search"
+)
+  div.middle.center.glyphicon.glyphicon-search

@@ -1,0 +1,24 @@
+
+body {
+  font-family: Raleway, sans-serif;
+}
+
+
+main {
+  padding:5px;
+  position: relative;
+  overflow: auto;
+  min-width: 340px;
+  min-height: 100vh;
+
+  background:url('core/main/sunsetbg.jpg') 50% 50%;
+  background-size:cover;
+  background-repeat: no-repeat;
+  color:white;
+}
+
+@media(min-width:$goldenStartSize + $goldenSize*6) {
+  .header-visible main {
+    margin-right: 340px;
+  }
+}

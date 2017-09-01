@@ -17,11 +17,11 @@ html(
        ? (' | '+title.pageTitle)
        : ''}}
   body(
-    ng-class="menu.visible ? 'menu-visible' : 'menu-hidden'"
+    ng-class="menu.opened ? 'menu-visible' : 'menu-hidden'"
   )
-    header(ng-controller="headerController")
+    header(ng-controller="headerController", ng-if="menu.visible")
       include ./components/header/headerView.pug
-    menu(ng-controller="menuController")
+    menu(ng-controller="menuController", ng-if="menu.visible")
       nav#nav
         include ./components/menu/menuView.pug
     

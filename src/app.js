@@ -30,6 +30,7 @@ import 'angular-route/angular-route.js';
 // Main
 import 'core/main/mainController.js'
 import 'components/menu/menuController.js'
+import 'components/header/headerController.js'
 import 'components/notFound/notFoundController.js'
 
 // Section Controllers

@@ -9,26 +9,13 @@ menu {
   padding:0;
 }
 
-main {
-  margin-left: 2px;
-  padding:5px;
-  position: relative;
-  overflow: auto;
-  min-width: 340px;
-  min-height: 100vh;
-
-  background:url('core/main/sunsetbg.jpg') 50% 50%;
-  background-size:cover;
-  background-repeat: no-repeat;
-  color:white;
-}
-
 nav {
   position: fixed;
   height: 100%;
-  background:rgba(255,255,255,0.9);
 
   &>ul {
+    background:rgba(255,255,255,0.9);
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -37,8 +24,9 @@ nav {
     height: 100%;
     padding: 0;
     list-style: none;
-    width:2px;
-    overflow: hidden;
+    width:5px;
+    opacity: 0.01;
+    transition: width .4s ease, opacity .4s ease;
 
     &>li {
       display: flex;
@@ -70,6 +58,13 @@ nav {
         flex: 12;
       }
 
+      &.menu-control {
+        & > p {
+          background: white;
+          line-height: 65px;
+        }
+      }
+
       &>p {
         padding: 0 15px;
         height: 50px;
@@ -77,11 +72,16 @@ nav {
         margin: 0;
         flex: 1;
         cursor: pointer;
+        box-shadow: 0px 2px 6px rgba(0,0,0,0.3);
+
+        &>.glyphicon {
+          font-size: 30px;
+        }
       }
 
       &>ul {
         list-style: none;
-        padding-left: 15px;
+        padding-left: 0px;
         flex: 30;
         overflow-y: auto;
         overflow-x: hidden;
@@ -91,9 +91,24 @@ nav {
 
         &>li {
 
+
           &>a {
-            padding: 10px;
+            padding: 15px 0 15px 32px;
             display: block;
+
+            &:focus, &:hover {
+              background: rgba(0,0,0,0.1);
+              outline: none;
+            }
+
+            &:active {
+              box-shadow: inset 0px 2px 5px 1px rgba(0, 0, 0, 0.6);
+              font-size: 85%;
+            }
+
+            &:first-child {
+              padding-top:22px;
+            }
           }
         }
       }
@@ -102,23 +117,18 @@ nav {
   }
 }
 
-.menu-visible {
-  // main {
-  //   margin-left: 340px;
-  // }
-  nav>ul {
-    width:340px;
-  }
+.menu-visible nav>ul,
+nav>ul:hover {
+  width:340px;
+  opacity: 1;
 }
 
 @media(max-width: $goldenSize*2px + $goldenStartSize) {
 
-  .menu-visible {
-    // main {
-    //   margin-left: 340px;
-    // }
-    nav, nav>ul {
-      width:100%;
-    }
+  .menu-visible nav,
+  .menu-visible nav>ul,
+  nav:hover,
+  nav>ul:hover {
+    width:100%;
   }
 }

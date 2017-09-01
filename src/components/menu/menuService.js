@@ -84,9 +84,10 @@ app.service("menuService",[
     }
 
     this.visible = true;
+    this.opened = true;
 
     this.toggleMenu = function() {
-      this.visible = !this.visible;
+      this.opened = !this.opened;
     }
   }
 ])
