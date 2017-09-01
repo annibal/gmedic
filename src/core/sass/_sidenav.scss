@@ -117,23 +117,18 @@ nav {
   }
 }
 
-.menu-visible nav>ul,
-nav>ul:hover {
-  width:340px;
-  opacity: 1;
-}
 
-.menu-forceclose nav>ul {
-  width:0px !important;
-  opacity: 0 !important
-}
-
-@media(max-width: $goldenSize*2px + $goldenStartSize) {
-
-  .menu-visible nav,
+@media(min-width: $goldenSize*2px + $goldenStartSize) {
   .menu-visible nav>ul,
-  nav:hover,
   nav>ul:hover {
+    width:340px;
+    opacity: 1;
+  }
+}
+@media(max-width: $goldenSize*2px + $goldenStartSize) {
+  .menu-visible nav,
+  .menu-visible nav>ul {
     width:100%;
+    opacity: 1;
   }
 }
