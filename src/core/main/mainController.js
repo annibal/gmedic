@@ -8,17 +8,20 @@ app.controller("mainController",[
   'titleService',
   'menuService',
   'screenSizeService',
+  '$location',
   '$scope',
   function(
     titleService,
     menuService,
     screenSize,
+    $location,
     $scope
   ) {
 
     $scope.title = titleService;
     $scope.menu = menuService;
     $scope.screenSize = screenSize;
+    $scope.$location = $location;
     window.mainScope = $scope;
 
   }

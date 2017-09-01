@@ -1,4 +1,68 @@
-div(ng-controller="loginController")
-  h2 Gmedic Hello
-  hr
-  a(href="#!/dashboard") Dashboard
+div(ng-controller="loginController").login
+  h2 
+    | GMedic
+    br
+    small Agendamento de consulta para medicos
+  div(ng-if="state == 'login'").state-container
+    input(
+      type="text",
+      name="username",
+      id="username",
+      ng-model="login.username"
+      placeholder="seu@email.com"
+    )
+    input(
+      type="password",
+      name="password",
+      id="password",
+      ng-model="login.password"
+      placeholder="Senha"
+    )
+    button.btn.btn-block.btn-primary.btn-login(
+      ng-click="dologin()"
+    ) Login
+    a.text-right(ng-click="setState('forgot-password')") Esqueci a senha
+    a.text-left(ng-click="setState('sign-up')") Criar conta
+    
+  div(ng-if="state == 'forgot-password'").state-container
+    input(
+      type="text",
+      name="username",
+      id="username",
+      ng-model="forgot.username"
+      placeholder="seu@email.com"
+    )
+    button.btn.btn-block.btn-primary.btn-login(
+      ng-click="resetpwd()"
+    ) Alterar senha
+    a.text-left(ng-click="setState('login')") Lembrei a senha
+    
+  div(ng-if="state == 'sign-up'").state-container
+    input(
+      type="text",
+      name="username",
+      id="username",
+      ng-model="signup.username"
+      placeholder="seu@email.com"
+    )
+    input(
+      type="password",
+      name="password",
+      id="password",
+      ng-model="signup.password"
+      placeholder="Senha"
+    )
+    input(
+      type="password",
+      name="password2",
+      id="password2",
+      ng-model="signup.password2"
+      placeholder="Senha"
+    )
+    p.text-red(ng-if="signup.password2 != signup.password")
+    button.btn.btn-block.btn-primary.btn-login(
+      ng-disabled="signup.password2 != signup.password"
+      ng-click="createaccount()"
+    ) Criar conta
+    a.text-left(ng-click="setState('login')") Fazer login
+  
