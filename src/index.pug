@@ -17,7 +17,8 @@ html(
        ? (' | '+title.pageTitle)
        : ''}}
   body(
-    ng-class="menu.opened ? 'menu-visible' : 'menu-hidden'"
+    ng-class="(menu.opened ? 'menu-visible' : 'menu-hidden') \
+      + ' ' + (menu.forceClosed ? 'menu-forceclose' : '') "
   )
     header(ng-controller="headerController", ng-if="menu.visible")
       include ./components/header/headerView.pug

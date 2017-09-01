@@ -19,13 +19,13 @@ ul
       
         a(
           ng-bind="item.text",
-          ng-click="menu.toggleMenu()",
+          ng-click="closeMenu()",
           ng-href="\#\!{{item.url}}"
         )
     
   li.category-hidden.menu-control(
     ng-if="screenSize.isLt('notebook')",
-    ng-click="menu.toggleMenu()"
+    ng-click="closeMenu()"
   )
     p.text-right
       span.glyphicon.glyphicon-remove

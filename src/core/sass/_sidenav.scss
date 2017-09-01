@@ -123,6 +123,11 @@ nav>ul:hover {
   opacity: 1;
 }
 
+.menu-forceclose nav>ul {
+  width:0px !important;
+  opacity: 0 !important
+}
+
 @media(max-width: $goldenSize*2px + $goldenStartSize) {
 
   .menu-visible nav,

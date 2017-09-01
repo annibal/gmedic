@@ -8,23 +8,23 @@ app.service("headerService",[
     this.items = {
       openMenu:{
         enabled:true,
-        order:50
+        order:1
       },
       info:{
         enabled:true,
-        order:2
+        order:3
       },
       fullscreen:{
         enabled:true,
-        order:3
+        order:5
       },
       chat:{
         enabled:true,
-        order:1
+        order:4
       },
       search:{
         enabled:true,
-        order:0
+        order:2
       }
 
     }
