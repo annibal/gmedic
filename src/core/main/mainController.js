@@ -30,6 +30,10 @@ app.controller("mainController",[
 
     nbBackground.init();
 
+    setTimeout(function() {
+      mainScope.$apply()
+    },230)
+
 
   }
 ])
