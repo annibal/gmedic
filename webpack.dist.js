@@ -21,7 +21,7 @@ module.exports = merge(common.webpackCommonConfig,{
       }
     }),
 
-    new FaviconsWebpackPlugin('./src/core/main/calendar_icon.png'),
+    new FaviconsWebpackPlugin('./src/core/main/gmedic.jpeg'),
 
     new HtmlWebpackPlugin({
       template:'./src/index.pug',

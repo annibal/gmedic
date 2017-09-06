@@ -1,7 +1,7 @@
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
-
 const path = require('path');
+
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
