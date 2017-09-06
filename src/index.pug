@@ -20,6 +20,8 @@ html(
     ng-class="(menu.opened ? 'menu-visible' : 'menu-hidden') \
       + ' ' + (menu.forceClosed ? 'menu-forceclose' : '') "
   )
+    figure#background
+      img(ng-src="{{nbBackground.backgroundData.url}}")
     header(ng-controller="headerController", ng-if="menu.visible")
       include ./components/header/headerView.pug
     menu(ng-controller="menuController", ng-if="menu.visible")

@@ -6,19 +6,21 @@
   width: 100%;
   max-width: 390px;
   margin: 0px auto;
-  background: rgba(255,255,255,0.5);
+  background: $login-box-background;
+  box-shadow: $login-box-shadow;
   padding: 25px;
   border-radius: 13px;
 }
 
 .login h2 {
   font-size: 60px;
-  color:lighten(black,35%);
+  color:$login-heading-color;
 
   small {
-    color:lighten(black,50%);
+    color:$login-subheading-color;
     font-size: 16px;
-    top: -35px;
+    top: -20px;
+    display: inline-block;
     position: relative;
   }
 }
@@ -26,8 +28,8 @@
 .login input {
   width: 100%;
   padding: 10px;
-  background: rgba(255,255,255,0.8);
-  color:lighten(black,25%);
+  background: $login-input-background;
+  color:$login-input-color;
   border: none;
   outline:none;
   margin-bottom: 15px;
@@ -50,6 +52,7 @@
   bottom: 0;
   width:45%;
   cursor:pointer;
+  color:$login-link-color;
 
   &.text-left {
     left:0;

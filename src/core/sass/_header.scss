@@ -6,9 +6,10 @@ header {
   bottom:0;
   left:0;
   width:100%;
-  background:$primary-color;
+  background:$header-background;
+  color:$header-color;
   line-height: 50px;
-  z-index: 290;
+  z-index: $header-zindex;
 
   display: flex;
   flex-direction: row-reverse;
@@ -28,8 +29,6 @@ header {
     font-size: 30px;
     cursor:pointer;
 
-    color: darken($primary-color,25%);
-
     @for $i from 1 through 50 {
       &.flex-order-#{$i} {
         order:$i;
@@ -37,7 +36,8 @@ header {
     }
 
     &:hover {
-      background: rgba(0,0,0,0.1);
+      background: $header-item-hover-background;
+      color: $header-item-hover-color;
     }
 
     // &:after {
