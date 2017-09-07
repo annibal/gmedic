@@ -61,3 +61,10 @@
     right:0;
   }
 }
+
+
+@media(max-width:($goldenSize*2px+$goldenStartSize)) {
+  .login {
+    top:5px;
+  }
+}

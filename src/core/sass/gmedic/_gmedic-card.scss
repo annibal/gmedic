@@ -1,0 +1,29 @@
+
+
+.card {
+
+  background: $card-background;
+  box-shadow: $card-shadow;
+  padding:$card-padding;
+  min-height: $card-min-height;
+  margin-bottom: $card-margin-bottom;
+
+  & > .card-header {
+
+  }
+
+  & > .card-body {
+
+  }
+
+  & > .card-footer {
+
+  }
+
+  & > .card-header + .card-body,
+  & > .card-body + .card-footer,
+  & > .card-header + .card-footer, {
+    border-top: $card-section-border-separator;
+  }
+
+}

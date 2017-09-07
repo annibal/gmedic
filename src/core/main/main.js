@@ -27,6 +27,5 @@ app.config([
       controller:"notFoundController"
     })
   }
-])
-
+]);
 module.exports = app;

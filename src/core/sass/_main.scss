@@ -6,7 +6,7 @@ body {
 
 
 main {
-  padding:5px;
+  padding:15px 15px 100px 15px;
   position: relative;
   overflow: auto;
   min-width: 340px;
@@ -42,3 +42,8 @@ figure#background {
     margin-right: 340px;
   }
 }
+
+
+.handwritten { font-family: Indie Flower, cursive; }
+.all-caps { text-transform: uppercase; }
+.nowrap { white-space: nowrap; flex-wrap: nowrap;}

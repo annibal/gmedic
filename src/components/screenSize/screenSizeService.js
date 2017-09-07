@@ -21,8 +21,8 @@ app.service("screenSizeService",[
     }
     this.BREAKPOINTS = {}
     this.BREAKPOINTS.NONE = this.calcBreakpoint(0);
-    this.BREAKPOINTS.MOBILE_PORTRAIT_NANO = this.calcBreakpoint(1)-150;
-    this.BREAKPOINTS.MOBILE_PORTRAIT_MICRO = this.calcBreakpoint(1)-75;
+    // this.BREAKPOINTS.MOBILE_PORTRAIT_NANO = this.calcBreakpoint(1)-150;
+    // this.BREAKPOINTS.MOBILE_PORTRAIT_MICRO = this.calcBreakpoint(1)-75;
     this.BREAKPOINTS.MOBILE_PORTRAIT_EXTRA_SMALL = this.calcBreakpoint(1);
     this.BREAKPOINTS.MOBILE_PORTRAIT_SMALL = this.calcBreakpoint(1)+75;
     this.BREAKPOINTS.MOBILE_PORTRAIT = this.calcBreakpoint(1)+150;
@@ -160,10 +160,8 @@ app.service("screenSizeService",[
         || angular.element(window)[0].outerWidth == 0
         || angular.element(window)[0].outerHeight == 0
       ) {
-        console.log("Failed to obtain width or height")
         return $timeout(this.readyResize.bind(this),150)
       }
-      console.log("Found width and height")
 
       this.width = angular.element(window)[0].outerWidth;
       this.height = angular.element(window)[0].outerHeight;

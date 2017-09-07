@@ -1,7 +1,34 @@
 div(ng-controller="dashboardController")
-  h2 Dashboard
-  button.btn.btn-block.btn-default(
-    ng-click="menu.toggleMenu()"
-  ) 
-    | {{menu.opened ? 'Fechar' : 'Abrir'}} menu
   
+  .row
+    .col-sm-6.col-xs-12
+  
+      .card
+        .card-header
+          h1 Dashboard
+          h2.handwritten Bem vindo ao GMedic!
+        .card-body
+          p Isto é um Card, é composto de um titulo, um corpo e um footer.
+          p.blockquote Titulo e Footer são opcionais
+          p.comment Utilizar css mais semântico, como blockquote
+          pre.
+            .card
+              .card-header
+                h1 Titulo
+              .card-body
+                p Lorem ipsum
+              .card-footer
+                button Ok
+        .card-footer
+          button Ok
+          
+  .row
+    .col-sm-4.col-xs-12
+      .card
+        p Oi
+    .col-sm-4.col-xs-12
+      .card
+        p Oi
+    .col-sm-4.col-xs-12
+      .card
+        p Oi
