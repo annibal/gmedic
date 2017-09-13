@@ -2,6 +2,7 @@
 import app from 'core/main/main.js'
 import Unsplash, { toJson } from 'unsplash-js';
 import gmedic from '../../../gmedic.config.js';
+import nbVerbose from 'core/nb/nbVerbose.js';
 
 const nbBackgroundChangeTimeout = gmedic.NB_BACKGROUND_CHANGE_TIMEOUT;
 const nbBackgroundCacheKey = gmedic.NB_BACKGROUND_CACHE_KEY;
@@ -13,14 +14,15 @@ const nbBackgroundUnsplashQuery = gmedic.UNSPLASH_RANDOM_IMAGE_QUERY;
 app.service('nbBackground',[
   '$interval',
   '$rootScope',
+  'nbVerbose',
   function(
     $interval,
     $rootScope,
+    nbVerbose,
   ) {
     this.nbBackgroundChangeTimeout = (parseInt(nbBackgroundChangeTimeout) || 3600)*1000;
     this.nbBackgroundCacheKey = nbBackgroundCacheKey || 'nb_background__last_image_data';
     this.backgroundProvider = (nbBackgroundProvider || 'unsplash').toLowerCase();
-    this.verbose = !!nbBackgroundVerbose;
     this.checkIntervalId = null;
     this.backgroundProviders = {
       PROVIDER_UNSPLASH:'unsplash',
@@ -39,20 +41,18 @@ app.service('nbBackground',[
     }
 
     this.imageAPI = {};
-
-    this.v = function() {
-      if (console && console.log && this.verbose === true) {
-        console.log("<<< nbBackground >>>", ...arguments);
-      }
-    }
+    var v = nbVerbose.make({
+      name:"nbBackground",
+      verbose:!!nbBackgroundVerbose
+    }).log
 
     this.init = function() {
-      this.v("Initializing nbBackground")
+      v("Initializing nbBackground")
       this.getCachedData();
       this.instantializeImageAPI();
       this.doCheckThenRenew();
 
-      this.v("Setting up listener 'setInterval' to constantly check if needs new image, interval at 80% of nbBackgroundChangeTimeout, which is "+this.nbBackgroundChangeTimeout+ ". interval id availabled as this.checkIntervalId");
+      v("Setting up listener 'setInterval' to constantly check if needs new image, interval at 80% of nbBackgroundChangeTimeout, which is "+this.nbBackgroundChangeTimeout+ ". interval id availabled as this.checkIntervalId");
       this.checkIntervalId = $interval(this.doCheckThenRenew, this.nbBackgroundChangeTimeout*0.8);
     }
 
@@ -64,8 +64,8 @@ app.service('nbBackground',[
     }
 
     this.instantializeImageAPI = function() {
-      this.v("Creating instance of API Object to obtain images")
-      this.v("Provider is: ",this.backgroundProvider);
+      v("Creating instance of API Object to obtain images")
+      v("Provider is: ",this.backgroundProvider);
 
       if (this.backgroundProvider == this.backgroundProviders.PROVIDER_UNSPLASH) {
         return this.instantializeUnsplashAPI()
@@ -74,8 +74,8 @@ app.service('nbBackground',[
       throw new Error("Image API provider \""+this.backgroundProvider+"\" not supported, failed to initialize API Object");
     }
     this.loadNewImageData = function() {
-      this.v("Requesting to our provider a new image")
-      this.v("Provider is: ",this.backgroundProvider);
+      v("Requesting to our provider a new image")
+      v("Provider is: ",this.backgroundProvider);
 
       if (this.backgroundProvider == this.backgroundProviders.PROVIDER_UNSPLASH) {
         return this.loadNewImageDataUnsplash()
@@ -85,17 +85,17 @@ app.service('nbBackground',[
     }
 
     this.getCachedData = function() {
-      this.v("Loading cached data from last served image");
+      v("Loading cached data from last served image");
 
       if (typeof Storage != 'null') {
-        this.v("Local Storage is available, attempting to get data at ["+this.nbBackgroundCacheKey+"]");
+        v("Local Storage is available, attempting to get data at ["+this.nbBackgroundCacheKey+"]");
 
         var dataStr = localStorage.getItem(this.nbBackgroundCacheKey);
-        this.v("DataStr",dataStr);
+        v("DataStr",dataStr);
 
         if (dataStr != null) {
           this.backgroundData = JSON.parse(dataStr);
-          this.v("Accomplished obtaining of cached data", this.backgroundData)
+          v("Accomplished obtaining of cached data", this.backgroundData)
         }
       } else {
         if (console && console.error) {
@@ -104,8 +104,8 @@ app.service('nbBackground',[
       }
     }
     this.isCurrentImageDeprecated = function() {
-      this.v("Verifying if current image was served before "+this.nbBackgroundChangeTimeout+" milliseconds")
-      this.v("Current timestamp: "+new Date().getTime());
+      v("Verifying if current image was served before "+this.nbBackgroundChangeTimeout+" milliseconds")
+      v("Current timestamp: "+new Date().getTime());
 
       var r = (
         (this.backgroundData.loadedTimestamp + this.nbBackgroundChangeTimeout < new Date().getTime())
@@ -113,17 +113,17 @@ app.service('nbBackground',[
         || (this.backgroundData.url == '')
       )
 
-      this.v(r ? ("Image is deprecated, was served at "+this.backgroundData.loadedTimestamp) : "Image is active")
+      v(r ? ("Image is deprecated, was served at "+this.backgroundData.loadedTimestamp) : "Image is active")
       return r;
     }
     this.cacheCurrentImageData = function() {
-      this.v("Saving new iamge data on cache");
+      v("Saving new iamge data on cache");
 
       if (typeof Storage != 'null') {
-        this.v("Local storage is available, registering data as string to ["+this.nbBackgroundCacheKey+"]");
+        v("Local storage is available, registering data as string to ["+this.nbBackgroundCacheKey+"]");
 
         var dataStr = JSON.stringify(this.backgroundData)
-        this.v("DataStr",dataStr);
+        v("DataStr",dataStr);
 
         localStorage.setItem(this.nbBackgroundCacheKey,dataStr)
       } else {
@@ -147,7 +147,7 @@ app.service('nbBackground',[
         { query:(nbBackgroundUnsplashQuery || 'landscape') }
       ).then(toJson).then(json => {
 
-        this.v("From unsplash: "+json,this)
+        v("From unsplash: "+json,this)
         this.backgroundData = {
           loadedTimestamp:new Date().getTime(),
           url:json.urls.regular+'&'+utmStuff,

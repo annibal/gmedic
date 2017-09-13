@@ -34,7 +34,8 @@ $sidenav-active-item-background: $primary-color;
 $sidenav-active-item-color: $primary-color-fore;
 $sidenav-menu-control-background: $primary-color;
 $sidenav-menu-control-color: $primary-color-fore;
-$sidenav-item-shadow: 0px 2px 6px rgba(0,0,0,0.3);
+$sidenav-item-shadow-down: 0px 2px 6px rgba(0, 0, 0, 0.3);
+$sidenav-item-shadow-up: 0px -2px 9px rgba(0, 0, 0, 0.15);
 $sidenav-subitem-background: transparent;
 $sidenav-subitem-color: $primary-color-fore;
 $sidenav-subitem-hover-background: transparent;
@@ -44,7 +45,7 @@ $sidenav-subitem-active-color: $accent-color;
 
 
 $login-box-background:rgba($white,0.8);
-$login-box-shadow:0px 2px 6px rgba(0,0,0,0.3);
+$login-box-shadow:0px 2px 6px rgba(0, 0, 0, 0.3);
 $login-heading-color:$black;
 $login-subheading-color:$black;
 $login-input-background: $primary-color;

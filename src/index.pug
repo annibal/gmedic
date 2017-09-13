@@ -25,7 +25,11 @@ html(
       img(ng-src="{{nbBackground.backgroundData.url}}")
     header(ng-controller="headerController", ng-if="menu.visible")
       include ./components/header/headerView.pug
-    menu(ng-controller="menuController", ng-if="menu.visible")
+    menu(
+      ng-controller="menuController",
+      ng-if="menu.visible",
+      nb-pseudo-hover
+    )
       nav#nav
         include ./components/menu/menuView.pug
     
