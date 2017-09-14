@@ -6,8 +6,13 @@ import pacientesService from 'sections/pacientes/pacientesService.js'
 import atendentesService from 'sections/atendentes/atendentesService.js'
 import agendamentosService from 'sections/agendamentos/agendamentosService.js'
 import nbToast from 'core/nb/nbToast.js'
+import nbVerbose from 'core/nb/nbVerbose.js'
+import gmedic from '../../../gmedic.config.js'
+
+const sectionAgendamentosVerbose = !!gmedic.SECTION_AGENDAMENTOS_VERBOSE
 
 app.controller('agendamentosController',[
+  'nbVerbose',
   'menuService',
   'titleService',
   'pacientesService',
@@ -17,6 +22,7 @@ app.controller('agendamentosController',[
   '$scope',
   '$routeParams',
   function(
+    nbVerbose,
     menu,
     title,
     pacientes,
@@ -27,14 +33,20 @@ app.controller('agendamentosController',[
     $routeParams
   ) {
 
+    var v = nbVerbose.make({
+      name:"agendamentosController",
+      verbose:sectionAgendamentosVerbose
+    }).log
+    v("Start agendamentos controller")
+
     menu.visible = true;
     title.pageTitle = "Agendamentos"
 
     if ($routeParams.agendamentoId != null) {
       $scope.idAgendamento = $routeParams.agendamentoId;
-      console.log("Obter dados do agendamento "+$scope.idAgendamento);
+      v("Obter dados do agendamento "+$scope.idAgendamento);
     } else {
-      console.log("Obter dados de todos os agendamentos")
+      v("Obter dados de todos os agendamentos")
     }
 
 

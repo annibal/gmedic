@@ -31,16 +31,21 @@
     transition: none;
   }
 
-  & > .card-header {
-    padding:$card-padding;
-  }
-
-  & > .card-body {
-    padding:$card-padding;
-  }
-
+  & > .card-header,
+  & > .card-body,
   & > .card-footer {
+    overflow: auto;
+    max-height: 342px;
     padding:$card-padding;
+    position:relative;
+    z-index: 2;
+  }
+
+  & > .card-header {
+  }
+  & > .card-body {
+  }
+  & > .card-footer {
   }
 
   & > .card-header + .card-body,

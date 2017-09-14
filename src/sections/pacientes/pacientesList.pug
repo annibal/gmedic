@@ -1,6 +1,43 @@
 div(ng-controller="pacientesController")
-  h2 Pacientes List
-  ul
-    each id in [1,2,3,4,5,6,7]
-      li
-        a(href="#!/paciente/"+id)= id + ':' + id + ' - ' + id
+  .row
+    .g-full
+      .card
+        .card-body
+          h2 Lista de Pacientes
+  .row
+    .g-one
+      .card
+        .card-header
+          p Buscar por nome
+        .card-body
+          input(type="text", ng-model="pacienteFilter.nome")
+    .g-one
+      .card
+        .card-header
+          p Filtrar seguro
+        .card-body
+          select(ng-model="pacienteFilter.seguro.nome")
+            option(value="lorem") Lorem
+            option(value="ipsum") Ipsum
+            option(value="dolor") Dolor
+            option(value="sit") Sit
+            option(value="amet") Amet
+  .row
+    .g-full
+      .card
+        .card-body
+          table.naked-table
+            thead
+              tr
+                th Nome
+                th Consultas
+                th Última
+                th Seguro
+                th Idade
+            tbody
+              tr(ng-repeat="paciente in pacientes | filter:pacienteFilter")
+                td {{paciente.nome}}
+                td {{(paciente.consultas | filter:{realizada:false}).length }}/{{paciente.consultas.length}}
+                td {{paciente.consultas[0].data | date:'dd/mm'}}
+                td {{paciente.seguro.nome || '---'}}
+                td {{anoAtual - paciente.anoNascimento}}

@@ -1,0 +1,22 @@
+
+input {
+  &[type="text"],
+  &[type="number"],
+  &[type="date"] {
+    background: $primary-color;
+    color:$primary-color-fore;
+    padding: $input-padding;
+    width:100%;
+    border:none;
+    border-bottom:1px solid $primary-color-fore;
+    border-left:1px solid $primary-color-fore;
+    position: relative;
+    display: block;
+    margin:0;
+
+    &:focus {
+      box-shadow: $input-box-shadow;
+    }
+
+  }
+}
