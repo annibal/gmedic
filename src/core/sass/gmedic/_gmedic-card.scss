@@ -1,5 +1,4 @@
 
-
 .card {
 
   background: $card-background;
@@ -7,17 +6,41 @@
   padding:$card-padding;
   min-height: $card-min-height;
   margin-bottom: $card-margin-bottom;
+  overflow:hidden;
+  position:relative;
+
+  &:before {
+    position: absolute;
+    opacity: 1;
+    z-index: 1;
+    content: "";
+    background: #dadada;
+    display: block;
+    padding: 0;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    padding:75%; opacity:0;
+    transition: padding .8s ease, opacity .8s ease;
+  }
+
+  &:active:before {
+    padding:0; opacity:1;
+    transition: none;
+  }
 
   & > .card-header {
-
+    padding:$card-padding;
   }
 
   & > .card-body {
-
+    padding:$card-padding;
   }
 
   & > .card-footer {
-
+    padding:$card-padding;
   }
 
   & > .card-header + .card-body,

@@ -10,6 +10,7 @@ header {
   color:$header-color;
   line-height: 50px;
   z-index: $header-zindex;
+  box-shadow: $header-shadow;
 
   display: flex;
   flex-direction: row-reverse;

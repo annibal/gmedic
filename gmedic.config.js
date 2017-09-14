@@ -19,7 +19,7 @@ module.exports = {
   MENU_CONTROLLER_VERBOSE:false,
   MENU_SERVICE_VERBOSE:false,
 
-  SCREEN_SIZE_VERBOSE:false,
+  SCREEN_SIZE_VERBOSE:true,
 
   FIREBASE:""
 }

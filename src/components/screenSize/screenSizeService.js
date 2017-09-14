@@ -199,11 +199,12 @@ app.service("screenSizeService",[
 
       this.width = angular.element(window)[0].outerWidth;
       this.height = angular.element(window)[0].outerHeight;
-      v("width: "+this.width, "height: "+this.height);
-      $rootScope.$apply();
 
       this.findViewportMetaElement();
       this.viewportMetaElement.attr("content", this.makeViewportContent())
+
+      v("width: "+this.width, "height: "+this.height);
+      $rootScope.$apply();
     }
     this.init = function() {
       v("Initializing, will run readyResize twice at 150ms and 200ms");

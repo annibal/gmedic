@@ -1,0 +1,55 @@
+
+%golden {
+  float:left;
+  padding-left:$golden-grid-cell-padding;
+  padding-right:$golden-grid-cell-padding;
+  position: relative;
+  min-height: 1px;
+  width: 100%;
+}
+
+.g-half {
+  @extend %golden;
+  max-width: $goldenSize * 0.5px;
+}
+.g-one {
+  @extend %golden;
+  max-width: $goldenSize * 1px;
+}
+.g-one-plus {
+  @extend %golden;
+  max-width: $goldenSize * 1.5px;
+}
+.g-two {
+  @extend %golden;
+  max-width: $goldenSize * 2px;
+}
+.g-two-plus {
+  @extend %golden;
+  max-width: $goldenSize * 2.5px;
+}
+.g-three {
+  @extend %golden;
+  max-width: $goldenSize * 3px;
+}
+.g-full {
+  @extend %golden;
+  max-width: 100%;
+}
+
+.row {
+  margin-left: $golden-grid-cell-padding * -1;
+  margin-right: $golden-grid-cell-padding * -1;
+
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+
+  &>[class*=g-]:first-child {
+    margin-right: $goldenStartSize * 1px;
+  }
+}
