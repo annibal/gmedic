@@ -13,6 +13,7 @@ input {
     position: relative;
     display: block;
     margin:0;
+    outline: none;
 
     &:focus {
       box-shadow: $input-box-shadow;

@@ -6,7 +6,8 @@
 $card-padding:8px;
 $card-shadow: 0px 2px 3px rgba(0,0,0,0.34);
 $card-section-border-separator:1px solid darken(white,4%);
-$card-background:#FFF;
+$card-background: $white;
+$card-click-background: darken($white,4%);
 $card-min-height:60px;
 $card-margin-bottom:15px;
 
@@ -19,3 +20,15 @@ $naked-table-cell-padding:8px;
 
 $input-padding:8px;
 $input-box-shadow:0px 2px 7px rgba(0,0,0,0.34);
+
+$tab-counter-padding: -8px;
+$tab-inner-padding: 8px;
+$tab-transition-speed: .4s;
+$tab-icon-size: $header-icon-size;
+$tab-item-padding:8px;
+
+$button-active-background: $header-item-hover-background;
+$button-active-color: $header-item-hover-color;
+$button-background: $header-background;
+$button-color: $header-color;
+$btn-item-transition-speed: .15s;

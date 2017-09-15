@@ -1,0 +1,82 @@
+.tab-view-container {
+  margin: $tab-counter-padding;
+  height: 100%;
+  overflow:hidden;
+  position:relative;
+
+  & > .tab-view {
+    padding:$tab-inner-padding;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    position: absolute;
+    animation:
+      tabOutLeft $tab-transition-speed/2 linear 0s 1 normal forwards,
+      fadeOut $tab-transition-speed/2 linear 0s 1 normal forwards;
+    transform: translateX(-100%);
+    z-index: 2;
+
+    &.active {
+      position: relative;
+      animation:
+        tabInLeft $tab-transition-speed/2 linear $tab-transition-speed/2 1 forwards,
+        fadeIn $tab-transition-speed/2 linear $tab-transition-speed/2 1 forwards;
+      z-index: 1;
+    }
+
+  }
+
+  & > .tab-view {
+    animation-name:tabOutLeft, fadeOut;
+    & ~ .tab-view.active {
+      animation-name:tabInRight !important, fadeIn;
+    }
+  }
+  & > .tab-view.active {
+    animation-name: tabInLeft, fadeIn;
+    & ~ .tab-view {
+      animation-name: tabOutRight !important, fadeOut;
+    }
+  }
+}
+@keyframes fadeOut {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+};
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+};
+@keyframes tabOutLeft {
+  0% {transform: translateX(0);}
+  100% {transform: translateX(-100%);}
+}
+@keyframes tabOutRight {
+  0% {transform: translateX(0);}
+  100% {transform: translateX(100%);}
+}
+@keyframes tabInLeft {
+  0% {transform: translateX(-100%);}
+  100% {transform: translateX(0);}
+}
+@keyframes tabInRight {
+  0% {transform: translateX(100%);}
+  100% {transform: translateX(0);}
+}
+@keyframes tabOutTop {
+  0% {transform: translateY(0);}
+  100% {transform: translateY(-100%);}
+}
+@keyframes tabOutBottom {
+  0% {transform: translateY(0);}
+  100% {transform: translateY(100%);}
+}
+@keyframes tabInTop {
+  0% {transform: translateY(-100%);}
+  100% {transform: translateY(0);}
+}
+@keyframes tabInBottom {
+  0% {transform: translateY(100%);}
+  100% {transform: translateY(0);}
+}

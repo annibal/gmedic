@@ -10,18 +10,21 @@ div(ng-controller="pacientesController")
         .card-header
           p Buscar por nome
         .card-body
-          input(type="text", ng-model="pacienteFilter.nome")
+          .input-container
+            input(type="text", ng-model="pacienteFilter.nome")
     .g-one
       .card
         .card-header
           p Filtrar seguro
         .card-body
-          select(ng-model="pacienteFilter.seguro.nome")
-            option(value="lorem") Lorem
-            option(value="ipsum") Ipsum
-            option(value="dolor") Dolor
-            option(value="sit") Sit
-            option(value="amet") Amet
+          .input-container
+            select(ng-model="pacienteFilter.seguro.nome")
+              option(value="", selected) Selecione
+              option(value="lorem") Lorem
+              option(value="ipsum") Ipsum
+              option(value="dolor") Dolor
+              option(value="sit") Sit
+              option(value="amet") Amet
   .row
     .g-full
       .card

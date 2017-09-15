@@ -25,23 +25,194 @@ div(ng-controller="dashboardController")
   .row
     .g-one
       .card
-        p Oi
+        .card-body
+          p Oi
     .g-one
       .card
-        p Oi
+        .card-body
+          p Oi
     .g-one
       .card
-        p Oi
+        .card-body
+          .row
+            .g-half
+              p Oi
+            .g-half
+              p Oi 2
   .row
     .g-half
       .card
-        p Oi
+        .card-body
+          p Oi
     .g-half
       .card
-        p Oi
+        .card-body
+          p Oi
     .g-half
       .card
-        p Oi
+        .card-body
+          p Oi
     .g-half
       .card
-        p Oi
+        .card-body
+          p Oi
+  .row
+    .g-two
+      .card.nofx
+        .card-header
+          h2.handwritten Card com botoes que fazem coisas
+          .btn-bar.full
+            button.naked-button.btn-bar-item.btn-bar-icon(
+              ng-click="tab1.currentTab = 'edit'",
+              ng-class="{ 'active' : tab1.currentTab == 'edit' }"
+            )
+              span.glyphicon.glyphicon-pencil
+            button.naked-button.btn-bar-item.btn-bar-icon(
+              ng-click="tab1.currentTab = 'fav1'",
+              ng-class="{ 'active' : tab1.currentTab == 'fav1' }"
+            )
+              span.glyphicon.glyphicon-star
+            button.naked-button.btn-bar-item.btn-bar-icon(
+              ng-click="tab1.currentTab = 'fav2'",
+              ng-class="{ 'active' : tab1.currentTab == 'fav2' }"
+            )
+              span.glyphicon.glyphicon-star
+            button.naked-button.btn-bar-item.btn-bar-icon(
+              ng-click="tab1.currentTab = 'fav3'",
+              ng-class="{ 'active' : tab1.currentTab == 'fav3' }"
+            )
+              span.glyphicon.glyphicon-star
+            button.naked-button.btn-bar-item.btn-bar-icon(
+              ng-click="tab1.currentTab = 'config'",
+              ng-class="{ 'active' : tab1.currentTab == 'config' }"
+            )
+              span.glyphicon.glyphicon-cog
+        .card-body
+          .tab-view-container(ng-init="tab1 = {currentTab:'edit' }")
+            .tab-view.btn-bar-container(ng-class="{ 'active' : tab1.currentTab == 'edit' }")
+              .btn-bar.vertical(ng-init="tab2 = {currentTab:'a' }")
+                button.naked-button.btn-bar-item.btn-bar-icon(
+                  ng-click="tab2.currentTab = 'a'",
+                  ng-class="{ 'active' : tab2.currentTab == 'a' }"
+                )
+                  span.glyphicon.glyphicon-volume-off
+                button.naked-button.btn-bar-item.btn-bar-icon(
+                  ng-click="tab2.currentTab = 'b'",
+                  ng-class="{ 'active' : tab2.currentTab == 'b' }"
+                )
+                  span.glyphicon.glyphicon-volume-down
+                button.naked-button.btn-bar-item.btn-bar-icon(
+                  ng-click="tab2.currentTab = 'c'",
+                  ng-class="{ 'active' : tab2.currentTab == 'c' }"
+                )
+                  span.glyphicon.glyphicon-volume-up
+              .btn-bar.vertical(ng-init="tab2 = {currentTab:'a' }")
+                button.naked-button.btn-bar-item.btn-bar-icon
+                  span.glyphicon.glyphicon-tags
+                button.naked-button.btn-bar-item.btn-bar-icon
+                  span.glyphicon.glyphicon-book
+              .after-btn-bar-content.g-content
+                h3.handwritten Edit
+                p Lorem ipsum dolor sit amet,
+            .tab-view(ng-class="{ 'active' : tab1.currentTab == 'fav1' }")
+              h2 Fav 1
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            .tab-view.btn-bar-container(ng-class="{ 'active' : tab1.currentTab == 'fav2' }")
+              .btn-bar.vertical(ng-init="tab3 = {currentTab:'a' }")
+                button.naked-button.btn-bar-item(
+                  ng-click="tab3.currentTab = 'a'",
+                  ng-class="{ 'active' : tab3.currentTab == 'a' }"
+                )
+                  p Item List
+                button.naked-button.btn-bar-item(
+                  ng-click="tab3.currentTab = 'b'",
+                  ng-class="{ 'active' : tab3.currentTab == 'b' }"
+                )
+                  p Lorem
+                button.naked-button.btn-bar-item(
+                  ng-click="tab3.currentTab = 'c'",
+                  ng-class="{ 'active' : tab3.currentTab == 'c' }"
+                )
+                  p Pispisum
+                button.naked-button.btn-bar-item(
+                  ng-click="tab3.currentTab = 'd'",
+                  ng-class="{ 'active' : tab3.currentTab == 'd' }"
+                )
+                  p Item List 2
+                button.naked-button.btn-bar-item(
+                  ng-click="tab3.currentTab = 'e'",
+                  ng-class="{ 'active' : tab3.currentTab == 'e' }"
+                )
+                  p Last
+              .after-btn-bar-content
+                .btn-bar(ng-init="tab3 = {currentTab:'a' }")
+                  button.naked-button.btn-bar-item(
+                    ng-click="tab3.currentTab = 'a'",
+                    ng-class="{ 'active' : tab3.currentTab == 'a' }"
+                  )
+                    p Item List
+                  button.naked-button.btn-bar-item(
+                    ng-click="tab3.currentTab = 'b'",
+                    ng-class="{ 'active' : tab3.currentTab == 'b' }"
+                  )
+                    p Lorem
+                  button.naked-button.btn-bar-item(
+                    ng-click="tab3.currentTab = 'c'",
+                    ng-class="{ 'active' : tab3.currentTab == 'c' }"
+                  )
+                    p Pispisum
+                  button.naked-button.btn-bar-item(
+                    ng-click="tab3.currentTab = 'd'",
+                    ng-class="{ 'active' : tab3.currentTab == 'd' }"
+                  )
+                    p Item List 2
+                  button.naked-button.btn-bar-item(
+                    ng-click="tab3.currentTab = 'e'",
+                    ng-class="{ 'active' : tab3.currentTab == 'e' }"
+                  )
+                    p Last
+                h2 Fav 2
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            .tab-view(ng-class="{ 'active' : tab1.currentTab == 'fav3' }")
+              h2 Fav 3
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            .tab-view.btn-bar-container(ng-class="{ 'active' : tab1.currentTab == 'config' }")
+              .after-btn-bar-content(ng-class="{ \
+                'text-left':tab3.currentTab == 'a', \
+                'text-center':tab3.currentTab == 'b', \
+                'text-right':tab3.currentTab == 'c', \
+                'text-justify':tab3.currentTab == 'd', \
+                'handwritten':tab3.currentTab == 'e', \
+              }")
+                h2 Config
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              .btn-bar.vertical(ng-init="tab3 = {currentTab:'a' }")
+                button.naked-button.btn-bar-item.btn-bar-icon(
+                  ng-click="tab3.currentTab = 'a'",
+                  ng-class="{ 'active' : tab3.currentTab == 'a' }"
+                )
+                  span.glyphicon.glyphicon-align-left
+                button.naked-button.btn-bar-item.btn-bar-icon(
+                  ng-click="tab3.currentTab = 'b'",
+                  ng-class="{ 'active' : tab3.currentTab == 'b' }"
+                )
+                  span.glyphicon.glyphicon-align-center
+                button.naked-button.btn-bar-item.btn-bar-icon(
+                  ng-click="tab3.currentTab = 'c'",
+                  ng-class="{ 'active' : tab3.currentTab == 'c' }"
+                )
+                  span.glyphicon.glyphicon-align-right
+                button.naked-button.btn-bar-item.btn-bar-icon(
+                  ng-click="tab3.currentTab = 'd'",
+                  ng-class="{ 'active' : tab3.currentTab == 'd' }"
+                )
+                  span.glyphicon.glyphicon-align-justify
+                button.naked-button.btn-bar-item.btn-bar-icon(
+                  ng-click="tab3.currentTab = 'e'",
+                  ng-class="{ 'active' : tab3.currentTab == 'e' }"
+                )
+                  span.glyphicon.glyphicon-list
+        .card-footer
+          
+          
+            

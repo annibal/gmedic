@@ -6,6 +6,13 @@
   position: relative;
   min-height: 1px;
   width: 100%;
+
+  .row .card .row &:first-child {
+    padding-left:$golden-grid-cell-padding * 2;
+  }
+  .row .card .row &:last-child {
+    padding-right:$golden-grid-cell-padding * 2;
+  }
 }
 
 .g-half {
@@ -52,4 +59,14 @@
   &>[class*=g-]:first-child {
     margin-right: $goldenStartSize * 1px;
   }
+}
+
+.row .card .row {
+  margin-left: $golden-grid-cell-padding * -2;
+  margin-right: $golden-grid-cell-padding * -2;
+}
+
+.g-content {
+  padding-left:$golden-grid-cell-padding;
+  padding-right:$golden-grid-cell-padding;
 }

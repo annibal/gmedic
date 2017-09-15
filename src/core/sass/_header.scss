@@ -27,7 +27,7 @@ header {
     list-style: none;
     padding:0;
     margin:0;
-    font-size: 30px;
+    font-size: $header-icon-size;
     cursor:pointer;
 
     @for $i from 1 through 50 {
