@@ -37,6 +37,7 @@
 
   & > .card-header,
   & > .card-body,
+  & > .card-aside,
   & > .card-footer {
     overflow: auto;
     position:relative;
@@ -56,6 +57,19 @@
   & > .card-body + .card-footer,
   & > .card-header + .card-footer, {
     border-top: $card-section-border-separator;
+  }
+
+  & > .card-aside {
+    width:$card-aside-width;
+    float:left;
+  }
+  & > .card-aside + .card-body {
+    border-left: $card-section-border-separator;
+    border-top: $card-section-border-separator;
+  }
+  & > .card-body + .card-aside {
+    border-left: $card-section-border-separator;
+    float: right;
   }
 
 }
