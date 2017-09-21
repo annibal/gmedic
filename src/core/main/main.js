@@ -1,8 +1,15 @@
 
 import routes from 'core/routes.js'
+import gmedic from '../../../gmedic.config.js'
+import firebase from 'firebase/app';
+import 'angularfire';
+
+firebase.initializeApp(gmedic.FIREBASE);
+window.firebase = firebase
 
 var app = angular.module("gmedic", [
-  "ngRoute"
+  "ngRoute",
+   "firebase"
 ]);
 
 var base = '/'

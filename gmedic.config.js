@@ -26,5 +26,12 @@ module.exports = {
   SECTION_ATENDENTES_VERBOSE:true,
   SECTION_AGENDAMENTOS_VERBOSE:true,
 
-  FIREBASE:""
+  FIREBASE:{
+    apiKey: "AIzaSyDGaQfklxfNbHYlAGHpHF6iClRCQw8Q52M",
+    authDomain: "calendarprojectone.firebaseapp.com",
+    databaseURL: "https://calendarprojectone.firebaseio.com",
+    projectId: "calendarprojectone",
+    storageBucket: "calendarprojectone.appspot.com",
+    messagingSenderId: "220438651216"
+  }
 }
