@@ -8,6 +8,14 @@
   overflow:hidden;
   position:relative;
 
+  h1,h2,h3,h4,h5,h6 {
+    margin:5px 0;
+  }
+
+  p {
+    margin-top:0;
+  }
+
   &:before {
     position: absolute;
     opacity: 1;
@@ -47,9 +55,6 @@
   }
 
   & > .card-header {
-    h1,h2,h3,h4,h5,h6,p {
-      margin:0;
-    }
   }
   & > .card-body {
   }
