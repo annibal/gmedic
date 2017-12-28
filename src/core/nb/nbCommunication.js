@@ -3,7 +3,7 @@ import app from 'core/main/main.js'
 import nbSession from 'core/nb/nbSession.js'
 import nbVerbose from 'core/nb/nbVerbose.js'
 import gmedic from '../../../gmedic.config.js'
-import firebase from 'firebase/app.js'
+// import firebase from 'firebase/app.js'
 import faker from 'faker/index.js'
 
 const communicationServiceVerbose = !!gmedic.NB_COMMUNICATION_SERVICE_VERBOSE;
@@ -76,9 +76,9 @@ app.service("nbCommunication",[
           update:{ url:"", method:"PUT", },
           delete:{ url:"", method:"DELETE", },
         },
-        validate:function() { return true; }
+        validate:function() { return true; },
         transform:{
-          in:function(data) { return data; }
+          in:function(data) { return data; },
           out:function(data) { return data; }
         }
       }
@@ -98,7 +98,7 @@ app.service("nbCommunication",[
       var portal = {};
       var errors = {};
       var refId = faker.random.uuid();
-      this.reference(refId) = portal;
+      // this.reference(refId) =d portal;
 
       var fRef = firebase.database().ref().child(config.endpoint.url);
 
@@ -106,7 +106,7 @@ app.service("nbCommunication",[
       $rootScope.$watch(
         function() { return this.reference(refId) },
         function(newValue, oldValue) {
-          
+
 
 
         },
