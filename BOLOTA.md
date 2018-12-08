@@ -185,3 +185,133 @@ PA.VALOR_APRESENTADO             | numeric(20,2)   | Valor apresentado
 PA.VALOR_APROVADO                | numeric(20,2)   | Valor aprovado
 PA.STATUS_ID                     | char(1)         | Código da situação do procedimento
 PA.STATUS_DESC                   | varchar(50)     | Descrição da situação do procedimento
+  
+  
+### estabelecimentos saude NEOWAY
+  
+Coluna | Tipo | Descricao
+:---|:---|:---
+CD_CNES | Campo Numérico | CNES - Número do Cadastro Nacional de Estabelecimentos de Saúde
+CD_CPF | string | CPF - Cadastro de Pessoa Física
+CD_CNPJ | string | CNPJ - Cadastro Nacional de Pessoa Jurídica
+NM_RAZAO_SOCIAL | string | Razão Social - Nome oficial e registrado sob o qual uma pessoa jurídica/empresa exerce suas atividades
+NM_FANTASIA | string | Nome Fantasia - Nome comercial sob o qual uma empresa  se torna conhecida do público
+CD_NATUREZA_JURIDICA | string | Código Natureza Jurídica - Código Natureza Jurídica
+DE_NATUREZA_JURIDICA | string | Descrição Natureza Jurídica - Descrição Natureza Jurídica
+TIPO_ESTABELECIMENTO |  | "Tipo de Estabelecimento - Descrição do tipo de estabelcimento
+DT_CADASTRO | date | Data Cadastro - Data do cadastro do estabelecimento no CNES
+DT_ATUALIZACAO_CADASTRO | date | Atualização do Cadastro - Atualização cadastral pelo Estabelecimento de Saúde
+DESCRICAO_ATIVIDADE_ENSINO_PESQUISA | string | Atividade de Ensino e Pesquisa - Indica se o Estabelecimento possui alguma atividade de Ensino ou Pesquisa
+FL_ESTAB_EXCLUIDO | string | Estabelecimento excluído - Indica se o estabelecimento consta no arquivo de cadastro de estabelecimentos como excluído (Sim/Não)
+FLUXO_CLIENTELA | string | Fluxo de Clientela - Identifica se o atendimento é de demanda expontanea ou referenciada
+TURNO_ATENDIMENTO | string | Turno de atendimento - Identifica o turno de atendimento do Estabelecimento
+DESCRICAO_GESTAO | string | Gestão - Indica se a Gestão do Estabelecimento é Municipal ou Estadual
+CD_CPF_DIRETOR_CLINICO | string | CPF Diretor Clínico - Cadastro de Pessoa Física do diretor clinico do estabelecimento
+MANTENEDORA_CD_CNPJ | string | CNPJ - Cadastro Nacional de Pessoa Jurídica da Mantenedora do Estabelecimento
+MANTENEDORA_NM_RAZAO_SOCIAL | string | Razão Social - Nome oficial e registrado sob o qual uma pessoa jurídica/empresa exerce suas atividades
+MANTENEDORA_NM_FANTASIA | string | Nome Fantasia - Nome comercial sob o qual uma empresa mantenedora  se torna conhecida do público
+MANTENEDORA_CD_NATUREZA_JURIDICA | string | Código Natureza Jurídica - Código Natureza Jurídica
+MANTENEDORA_DE_NATUREZA_JURIDICA | string | Descrição Natureza Jurídica - Descrição Natureza Jurídica
+MANTENEDORA_DE_SITUACAO | string | Situação Cadastral - Situação da empresa na Receita Federal
+MANTENEDORA_CNAE_PRINCIPAL | string | Identificador do CNAE principal - Código da Classificação Nacional de Atividades Econômicas
+MANTENEDORA_DESCRICAO_CNAE_PRINCIPAL | string | Descrição do CNAE principal - Descrição da Classificação Nacional de Atividades Econômicas
+FL_VINCULO_SUS | string | Possui vínculo SUS - Indica se o Estabelecimento possui contrato para atendimento SUS
+NM_LOGRADOURO | string | Logradouro - Endereço de cadastro
+NU_LOGRADOURO | string | Numero - Número do endereço de cadastro
+NM_BAIRRO | string | Bairro - Bairro do endereço de cadastro
+NM_MUNICIPIO | string | Município - Município do endereço de cadastro
+SG_UF | string | UF - Estado
+NM_MACRORREGIAO_SAUDE | string | Macrorregião de Saúde - Macrorregião de Saúde do endereço de cadastro
+CD_CEP | string | CEP - CEP
+QTD_FUNCIONARIOS | int | Quantidade de funcionários - Quantidade de funcionários registrados na empresa
+RENDA_MEDIA_PER_CAPITA_POPULACAO |  | "Renda média per capita da população - Renda média per capita da população
+TIPO_ATENDIMENTO_PRESTADO |  Urgência...)" | "Tipos e Atendimentos - Tipo de atendimento prestado (Ambulatorial
+CONVENIOS | string | Convênios - Tipo de convênios que atende
+ATIVIDADE_TIPO | string | Atividade - Se possui atividade Ambulatorial ou Hospitalar
+ATIVIDADE_NIVEL_ATENCAO | string | Nível de Atenção - Complexidade das atividades do Estabelecimento
+ATIVIDADE_GESTAO | string | Gestão - Tipo de Gestão das atividades
+HABILITACOES_CODIGO | string | Código Habilitação - Código da Habilitação
+HABILITACOES_DESCRICAO | string | Descrição habilitação - Descrição da habilitação para desenvolver funções específicas exigidas para a realização de determinado procedimento.
+HABILITACOES_COMPETENCIA_INICIAL | string | Competência inicial - Data de início da Habilitação
+HABILITACOES_COMPETENCIA_FINAL | string | Competência final - Data fim da Habilitação
+HABILITACOES_PORTARIA | string | Portaria - Registro da Portaria da Habilitação
+HABILITACOES_DT_PORTARIA | string | Data Portaria - Data da publicação da Portaria
+HABILITACOES_QTD_LEITOS | string | Quantidade de Leitos - Quantidade de leitos habilitados na Portaria
+INCENTIVOS_CODIGO | string | Código Incentivos - Código de registro do Incentivo
+INCENTIVOS_DESCRICAO | string | Descrição Incentivos - Descrição do Incentivo que é definido por : Financiamento e a transferência dos recursos federais para as ações e os serviços de saúde do Sistema Único de Saúde.
+INCENTIVOS_COMPETENCIA_INICIAL | string | Competência inicial - Data do inicio do recebimento do Incentivo
+INCENTIVOS_COMPETENCIA_FINAL | string | Competência final - Data fim do recebimento do Incentivo
+INCENTIVOS_PORTARIA | string | Portaria - Portaria que registrou o Incentivo
+INCENTIVOS_DT_PORTARIA | string | Data Portaria - Data do registro da Portaria do Incentivo
+QTD_TOTAL_LEITOS_EXISTENTES | int | Quantidade total de leitos existentes - Somatorio dos leitos existentes no estabelecimento
+QTD_TOTAL_LEITOS_SUS | int | Quantidade total de leitos SUS - Somatorio dos leitos existentes SUS no estabelecimento
+QTD_TOTAL_LEITOS_NAO_SUS | int | Quantidade total de leitos não SUS - Somatorio dos leitos existentes Não SUS no estabelecimento
+LEITO_TIPO | string | Tipo Leito - Classificação dos tipos de leitos
+LEITO_ESPECIALIDADE | string | Especialidade - Especialidade dos leitos
+LEITO_QTD_POR_ESPECIALIDADE | string | Quantidade de Leitos por especialidade - Quantidade de Leitos por especialidade
+LEITO_QTD_POR_ESPECIALIDADE_SUS | string | Quantidade leitos por especialidade SUS - Quantidade leitos por especialidade SUS
+LEITO_QTD_POR_ESPECIALIDADE_NAO_SUS | string | Quantidade Leitos por especialidade Não SUS - Quantidade Leitos por especialidade Não SUS
+SERVICO_CODIGO | string | Código Serviço - Código da classificação do serviço oferecido pelo estabelecimento
+SERVICO_DESCRICAO | string | Serviço - Descrição do serviço de acordo com o conjunto de ações realizadas pelo estabelecimento
+SERVICO_CARACTERISTICA | string | Característica - Identifica se o serviço oferecido é próprio
+SERVICO_CLASSIFICACAO | string | Descrição da Classificação - Descrição da classificação so serviço oferecido
+SERVICO_HOSPITALAR_SUS | string | Hospitalar SUS - Se o serviço oferecido é Hospitalar SUS
+SERVICO_HOSPITALAR_NAO_SUS | string | Hospitalar Não SUS - Se o serviço oferecido é Hospitalar Não SUS
+SERVICO_AMBULATORIAL_SUS | string | Ambulatorial SUS - Se o serviço oferecido é Ambulatorial SUS
+SERVICO_AMBULATORIAL_NAO_SUS | string | Ambulatorial Não SUS - Se o serviço oferecido é Ambulatorial Não SUS
+SERVICO_TERCEIRO | string | Terceiro - Se existe um terceiro que presta o serviço
+SERVICO_TURNO_ATENDIMENTO | string | Turno de atendimento - Turno de atendimento do serviço que é prestado
+INSTALACAO_FISICA_CATEGORIA | string | Categoria - Classificação das instalações físicas por categoria
+INSTALACAO_FISICA_DESCRICAO |  | "Instalação - Tipo de instalação física (leito
+INSTALACAO_FISICA_QTD_CONSULTORIOS | string | Quantidade de Consultórios - Quantidade de Consultórios
+INSTALACAO_FISICA_QTD_LEITOS | string | Quantidade de Leitos - Quantidade de Leitos
+SERVICO_APOIO_TIPO | string | Tipo - Tipo do serviço de apoio do estabelecimento
+SERVICO_APOIO_CARACTERISTICA | string | Característica - Se próprio ou terceirizado
+COLETA_RESIDUOS_REJEITOS_TIPO | string | Tipo de Coleta - Tipo de coleta de resíduos e rejeitos que o estabelecimento realiza
+COMISSOES_DESCRICAO | string | Comissões - Descrição das comissões existentes no estabelecimento
+QTD_TOTAL_EQUIPAMENTOS_EXISTENTES | int | Quantidade de equipamentos existentes - Quantidade de equipamentos existentes
+QTD_TOTAL_EQUIPAMENTOS_EM_USO | int | Quantidade de equipamentos em uso - Quantidade de equipamentos em uso
+EQUIPAMENTO_TIPO | string | Tipo do Equipamento - Tipo do Equipamento
+EQUIPAMENTO_NOME | string | Nome do Equipamento - Nome do Equipamento
+EQUIPAMENTO_QTD_EM_USO | string | Quantidade em uso - Quantidade em uso
+EQUIPAMENTO_QTD_EXISTENTE | string | Quantidade existente - Quantidade existente
+EQUIPAMENTO_SUS | string | SUS - Equipamento usado para atendimento SUS
+EQUIPAMENTO_NAO_SUS | string | Não SUS - Equipamento usado para atendimento não SUS
+PROFISSIONAIS_QUANTIDADE | int | Quantidade de Profisisonais - Quantidade de Profissionais do estabelecimento cadastrados no CNES
+EQUIPE_SAUDE_TIPO | string | Tipo de Equipe - Tipo de equipe de saúde
+EQUIPE_SAUDE_NOME | string | Nome - Nome da equipe de saúde
+EQUIPE_SAUDE_CODIGO_AREA | string | Código da área - Código da área atendida pela equipe de saúde
+EQUIPE_SAUDE_SEGMENTO | string | Segmento - Seguimento da área atendida pela equipe
+EQUIPE_SAUDE_ATENDE_QUILOMBOLAS | string | Atende Quilombolas - Indica se a equipe atende população quilombola
+EQUIPE_SAUDE_ATENDE_ASSENTADOS | string | Atende assentados - Indica se a equipe atende população de assentados
+EQUIPE_SAUDE_ATENDE_POPULACAO | string | Atende população geral - Indica se a equipe atende população geral
+EQUIPE_SAUDE_ATENDE_ESCOLA | string | Atende escola - Indica se a equipe atende população de escola
+EQUIPE_SAUDE_ATENDE_INDIGENA | string | Atende indígena - Indica se a equipe atende população indígena
+EQUIPE_SAUDE_ATENDE_PRONASCI | string | Atende PRONASC - Indica se a equipe atende população das áreas indicadas no PRONASC
+ATENDE_PLANO_DE_SAUDE | string | Operadoras e Planos de Saúde - Indica se atende plano de saúde
+OPERADORA_CLASSIFICACAO | string | Classificação do Prestador - Classificado como Assistência Hospitalar
+OPERADORA_NOME | string | Operadora - Nome da Operadora de Planos de Saúde
+OPERADORA_PORTE | string | Porte da Operadora - Porte da Operadora
+OPERADORA_TIPO_CONTRATACAO | string | Tipo de Contratação - Tipo da contratação do Plano
+OPERADORA_TIPO_SEGMENTACAO | string | Tipo de Segmentação - Segmento do Plano
+OPERADORA_AREA_COBERTURA | string | Área de Cobertura - Área de Cobertura do Plano
+OPERADORA_SITUACAO_PLANO | string | Situação do Plano - Situação de comercialização do Plano
+OPERADORA_TIPO_RELACAO_JURIDICA | string | Tipo de Relação Jurídica - Tipo de relação jurídica da Operadora com o Estabelecimento
+OPERADORA_DT_INICIO_VINCULO | string | Data início do vínculo - Data inicio do vínculo com a Operadora
+OPERADORA_DT_FIM_VINCULO | string | Data fim do vínculo - Data fim do vínculo com a Operadora
+QTD_TOTAL_PROCEDIMENTOS_ULTIMO_MES_SUS_SIA | int | Total de procedimentos no último mês - Antedimento Ambunlatorial SUS (SIA) - Somatório dos procedimentos apresentados pelo estabelecimento no último mês de competência Antedimento Ambunlatorial SUS (SIA)
+VALOR_TOTAL_PROCEDIMENTOS_ULTIMO_MES_SUS_SIA | numeric | Valor total de procedimentos no último mês - Antedimento Ambunlatorial SUS (SIA) - Somatório do valor total dos procedimentos apresentados pelo estabelecimento no último mês de competência
+ATEND_AMBULATORIAL_SUS_SIA_PROCEDIMENTO | string | Procedimento - Descrição do procedimento
+ATEND_AMBULATORIAL_SUS_SIA_CODIGO | string | Código - Código do procedimento
+ATEND_AMBULATORIAL_SUS_SIA_QTD_APRESENTADA | string | Quantidade apresentada último mês - Quantidade dos procedimentos apresentados pelo estabelecimento
+ATEND_AMBULATORIAL_SUS_SIA_VALOR | string | Valor apresentado último mês - Valor dos procedimentos apresentados no último mês de competência
+ATEND_AMBULATORIAL_SUS_SIA_MKT_SHARE_MUNCIPIO | string | Market Share Município - Representa a proporção dos procedimentos que o estabelecimento apresentou em relação a macrorregião de localização do estabelecimento
+ATEND_AMBULATORIAL_SUS_SIA_MKT_SHARE_MACROREG | string | Market Share Macrorregião - Representa a proporção dos procedimentos que o estabelecimento apresentou em relação ao município de localização do estabelecimento
+QTD_TOTAL_PROCEDIMENTOS_ULTIMO_MES_SUS_SIH | int | Total de procedimentos no último mês  - Internação Hospitalar SUS (SIH) - Somatório dos procedimentos apresentados pelo estabelecimento no último mês de competência - Internação Hospitalar SUS (SIH)
+QTD_TOTAL_INTERNACOES_ULTIMO_MES_SUS_SIH | int | Total de internações no último mês - Internação Hospitalar SUS (SIH) - Somatório das internações realizadas pelo estabelecimento no último mês de competência - - Internação Hospitalar SUS (SIH)
+VALOR_TOTAL_PROCEDIMENTOS_ULTIMO_MES_SUS_SIH | numeric | Valor total de procedimentos no último mês - Somatório do valor total de procedimentos apresentado pelo estabelecimento
+ATEND_AMBULATORIAL_SUS_SIH_PROCEDIMENTO | string | Procedimento - Descrição do procedimento
+ATEND_AMBULATORIAL_SUS_SIH_CODIGO | string | Código - Código do procedimento
+ATEND_AMBULATORIAL_SUS_SIH_QTD_INTERNACOES | string | Quantidade de internações último mês - Quantidade de internação por procedimento apresentado no último mês de comprtência
+ATEND_AMBULATORIAL_SUS_SIH_QTD_PROCEDIMENTOS | string | Quantidade de procedimentos último mês - Quantidade de procedimentos apresentados no último mês de competência
+ATEND_AMBULATORIAL_SUS_SIH_VALOR_PROCEDIMENTO | string | Valor procedimentos último mês - Valor dos procedimentos apresentados no último mês de competência
